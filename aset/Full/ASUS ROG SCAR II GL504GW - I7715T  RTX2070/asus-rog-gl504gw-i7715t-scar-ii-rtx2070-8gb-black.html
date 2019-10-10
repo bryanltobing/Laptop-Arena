@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="id" lang="id">
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<title>JUAL ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK - Laptop | Notebook | Netbook | Harga Spesifikasi Murah | Pemmz - Pemmz.com</title>
+<meta name="description" content="Jual ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK Baru Dengan Review Spesifikasi 15.6&quot; FHD ,Intel Core i7-8750H,16 GB DDR4 SDRAM,512GB PCIe® Gen3 SSD ,NVIDIA® GeForce® RTX2070 8GB ,NO ODD,WIN 10" />
+<meta name="keywords" content="jual ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK
+harga ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK
+ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACKJakarta.
+ jual ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK Indonesia, 
+spesifikasi ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK
+review ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="icon" href="https://www.pemmz.com/media/favicon/default/favicon_3_.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="https://www.pemmz.com/media/favicon/default/favicon_3_.ico" type="image/x-icon" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+	<link rel="author" href="https://plus.google.com/105370004030928982346" />
+
+
+
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'https://www.pemmz.com/js/blank.html';
+    var BLANK_IMG = 'https://www.pemmz.com/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<!--group: nogroup-->
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/js/calendar-win2k-1.css" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/js/calendar/calendar-win2k-1.css" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/base/default/css/widgets.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/sm-destino/default/css/custom.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/base/default/css/bubble/autocomplete.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/base/default/slideshowwidget/css/wt-rotator.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/base/default/inchoo_socialconnect/google/css/button.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/base/default/inchoo_socialconnect/facebook/css/button.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/base/default/css/magestore/bannerslider/popup.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/sm-destino/default/css/bootstrap/bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/sm-destino/default/css/bootstrap/bootstrap-theme.min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/sm-destino/default/css/theme-indonesia.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/sm-destino/default/css/css_fix.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/sm-destino/default/css/font-awesome/css/font-awesome.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/sm-destino/default/css/print.css" media="print" />
+<script type="text/javascript" src="https://www.pemmz.com/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/lib/ccard.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/prototype/validation.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/scriptaculous/builder.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/scriptaculous/effects.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/scriptaculous/dragdrop.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/scriptaculous/controls.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/scriptaculous/slider.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/varien/js.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/varien/form.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/varien/menu.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/mage/translate.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/mage/cookies.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/calendar/calendar.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/calendar/calendar-setup.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/magestore/bannerslider/lightbox.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/varien/product.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/varien/configurable.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/varien/product_options.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/sm/jquery/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/sm/jquery/jquery.noconflict.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/js/sm/jquery/jquery.migrate.min.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/base/default/js/lib/noconflict.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/base/default/js/typeahead.bundle.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/base/default/slideshowwidget/js/jquery.wt-rotator.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/base/default/js/bundle.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/sm/cartpro/js/cartpro.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/sm/cartpro/js/cartpro_update.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/owl.carousel.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/jquery.lightSlider.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/easyResponsiveTabs.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/jquery.elevatezoom.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/jquery.fancybox.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/configurableswatches/product-media.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/configurableswatches/swatches-list.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/configurableswatches/swatches-product.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/app.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/lib/imagesloaded.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="https://www.pemmz.com/skin/frontend/sm-destino/default/js/yt-theme.js"></script>
+<link href="https://www.pemmz.com/rss/catalog/new/store_id/5/" title="New Products" rel="alternate" type="application/rss+xml" />
+<link href="https://www.pemmz.com/rss/catalog/special/store_id/5/cid/0/" title="Special Products" rel="alternate" type="application/rss+xml" />
+<link href="https://www.pemmz.com/rss/catalog/salesrule/store_id/5/cid/0/" title="Coupons/Discounts" rel="alternate" type="application/rss+xml" />
+<link href="https://www.pemmz.com/blog/rss/index/store_id/5/" title="Blog" rel="alternate" type="application/rss+xml" />
+<link rel="canonical" href="https://www.pemmz.com/asus-rog-gl504gw-i7715t-scar-ii-rtx2070-8gb-black.html" />
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/base/default/css/ie_hack.css" media="all" />
+<![endif]-->
+
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.www.pemmz.com';
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["ID"];
+//]]>
+</script>
+<!-- BEGIN GOOGLE ANALYTICS CODEs -->
+<script type="text/javascript">
+//<![CDATA[
+    var _gaq = _gaq || [];
+    
+_gaq.push(['_setAccount', 'UA-21969238-1']);
+
+_gaq.push(['_trackPageview']);
+    
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+//]]>
+</script>
+<!-- END GOOGLE ANALYTICS CODE -->
+
+<script type="text/javascript">
+//<![CDATA[
+enUS = {"m":{"wide":["January","February","March","April","May","June","July","August","September","October","November","December"],"abbr":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]}}; // en_US locale reference
+Calendar._DN = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"]; // full day names
+Calendar._SDN = ["Min","Sen","Sel","Rab","Kam","Jum","Sab"]; // short day names
+Calendar._FD = 0; // First day of the week. "0" means display Sunday first, "1" means display Monday first, etc.
+Calendar._MN = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"]; // full month names
+Calendar._SMN = ["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agt","Sep","Okt","Nov","Des"]; // short month names
+Calendar._am = "AM"; // am/pm
+Calendar._pm = "PM";
+
+// tooltips
+Calendar._TT = {};
+Calendar._TT["INFO"] = "About the calendar";
+
+Calendar._TT["ABOUT"] =
+"DHTML Date/Time Selector\n" +
+"(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" +
+"For latest version visit: http://www.dynarch.com/projects/calendar/\n" +
+"Distributed under GNU LGPL. See http://gnu.org/licenses/lgpl.html for details." +
+"\n\n" +
+"Date selection:\n" +
+"- Use the \xab, \xbb buttons to select year\n" +
+"- Use the " + String.fromCharCode(0x2039) + ", " + String.fromCharCode(0x203a) + " buttons to select month\n" +
+"- Hold mouse button on any of the above buttons for faster selection.";
+Calendar._TT["ABOUT_TIME"] = "\n\n" +
+"Time selection:\n" +
+"- Click on any of the time parts to increase it\n" +
+"- or Shift-click to decrease it\n" +
+"- or click and drag for faster selection.";
+
+Calendar._TT["PREV_YEAR"] = "Prev. year (hold for menu)";
+Calendar._TT["PREV_MONTH"] = "Prev. month (hold for menu)";
+Calendar._TT["GO_TODAY"] = "Go Today";
+Calendar._TT["NEXT_MONTH"] = "Next month (hold for menu)";
+Calendar._TT["NEXT_YEAR"] = "Next year (hold for menu)";
+Calendar._TT["SEL_DATE"] = "Select date";
+Calendar._TT["DRAG_TO_MOVE"] = "Drag to move";
+Calendar._TT["PART_TODAY"] = ' (' + "hari ini" + ')';
+
+// the following is to inform that "%s" is to be the first day of week
+Calendar._TT["DAY_FIRST"] = "Display %s first";
+
+// This may be locale-dependent. It specifies the week-end days, as an array
+// of comma-separated numbers. The numbers are from 0 to 6: 0 means Sunday, 1
+// means Monday, etc.
+Calendar._TT["WEEKEND"] = "0";
+
+Calendar._TT["CLOSE"] = "Close";
+Calendar._TT["TODAY"] = "hari ini";
+Calendar._TT["TIME_PART"] = "(Shift-)Click or drag to change value";
+
+// date formats
+Calendar._TT["DEF_DATE_FORMAT"] = "%e %b %Y";
+Calendar._TT["TT_DATE_FORMAT"] = "%e %B %Y";
+
+Calendar._TT["WK"] = "Minggu";
+Calendar._TT["TIME"] = "Time:";
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+	var enable_ajax_cart = 0;
+	var enable_ajax_compare = 1;
+	var enable_ajax_wishlist = 1;
+	var confirm_countdown_number = 20;
+	var effect = 'click'
+	//var cartpro_baseurl = 'https://www.pemmz.com/';
+	var isLoggedIn = 0;
+	var currencyCode = 'Rp. ';
+	var formKeyJS = 'IP8g1mE27bQVyJNU'
+//]]>    
+</script>
+<script type="text/javascript">//<![CDATA[
+        var Translator = new Translate([]);
+        //]]></script><!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5c1d9fda82491369ba9f26b3/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script--><style>
+	.old-price{top:0}	
+	.before-footer-top,.footer-container{
+		font-size: 1.2em;
+	}
+	.postWrapper {
+		font-size: 1em !important;
+	}
+	/*product grid*/
+	.products-grid .item .item-inner .box-info .product-name a {
+		white-space: normal;
+		display: block;
+	}
+	.item .availability {
+		margin-bottom: 7px;
+	}
+	.item .desc.std {
+		margin-bottom: 7px;
+	}
+	.products-grid .item .item-inner .box-info .price-box {
+		height: 3em;
+		line-height: 1.2em;
+	}
+	/*end product grid*/
+@media (min-width: 768px) {
+	/*header*/
+	.header-style-1 .header .header-middle {
+		padding: 25px 0;
+	}
+	.header-style-1 .header .header-middle .logo img {
+		margin-top: 0;
+	}
+	.header-style-1 .header .header-middle .search-wrapper {
+		vertical-align: middle;
+	}
+	/*end header*/	
+	/*product grid*/
+	.products-grid .item .item-inner .box-info .product-name a {
+		height: 4.8em;
+	}
+	.item .desc.std {
+		height: 5em;
+	}
+	/*end product grid*/
+}
+@media (max-width: 767px) {
+	/*header*/
+	.header-style-1 .header .header-middle {
+		padding: 25px 0;
+	}
+	.header-style-1 .header .header-middle .logo img {
+		max-height:80px;
+		margin-top: -19px; */
+	}
+	.header-style-1 .header .header-middle .search-wrapper {
+		bottom: -73px;
+	}
+}
+@media (min-width: 480px) and (max-width: 767px) {
+	/*product grid*/
+	.products-grid .item .item-inner .box-info .product-name a {
+		height: 5em;
+	}
+	.item .desc.std {
+		height: 5em;
+	}
+	/*end product grid*/
+	.product-view ul.add-to-links {
+		margin-top: 20px !important;
+	}
+}
+@media (max-width: 479px) {
+	/*product grid*/
+	.products-grid .item .item-inner .box-info .product-name a {
+		height: 5.5em;
+	}
+	.item .availability {
+		height: 3.8em;
+	}
+	.item .availability span {
+		display: block;
+		font-weight: bold;
+	}
+	.item .desc.std {
+		height: 9.8em;
+	}
+	.item .price {
+		font-size: 1em;
+	}
+	.products-grid .item .item-inner .box-info .button-bottom .btn-cart {
+		padding: 0 15px;
+	}
+	/*end product grid*/
+	/*toolbar*/
+	.toolbar .toolbar-inner .sorter {
+		display: none;
+	}
+	.toolbar .toolbar-inner .pager .pages ol li.current, .toolbar .toolbar-inner .pager .pages ol li a {
+		height: 30px;
+		min-width: 30px;
+		line-height: 28px;
+		padding: 0 6px;
+		margin-left: 0;
+	}
+	.page-title .link-rss {
+		display: none;
+	}
+	/*end toolbar*/
+	/*product page*/
+	.product-view .add-to-cart .control-qty .input-text {
+		width: 30px !important;
+	}
+	.product-view .add-to-cart .control-qty {
+		margin-right: 5px;
+	}
+	.product-view button#product-addtocart-button {
+		padding: 0 10px;
+	}
+	.product-view .add-to-cart label {
+		display: none;
+	}
+	.product-view ul.add-to-links {
+		margin-top: 20px !important;
+	}
+	/*end product page*/
+}
+	/*banner slider*/
+	.flexslider.flexslider-7-1 {
+		margin: 0 0 15px;
+		border: none;
+	}
+	/*end banner slider*/
+	/*product page*/
+	.product-view .product-shop .old-price {
+		display: block;
+	}
+	.product-view .product-shop .price-box .old-price .price {
+		top: 0;
+	}
+	.product-view .product-shop .availability {
+		float: none;
+		margin-top: 0;
+		margin-bottom: 1.5em;
+	}
+	/*end product page*/
+	/*product compare float*/
+	.float-compare{
+		display:block;
+		width:50px;
+		height:50px;
+		line-height: 50px;
+		overflow:hidden;
+		border: 1px solid #b11116;
+		border-radius: 1em;
+		-webkit-border-radius: 1em;
+		position: fixed;
+		right: 20px;
+		bottom: 100px;
+		z-index: 9999;
+		box-shadow: 0 5px 4px 0 rgba(0,0,0,.26);
+		cursor: pointer;    
+		transition: width 0.5s;
+		-webkit-transition: width 0.5s;
+		background:#fff
+	}
+	.float-compare:hover{
+		width:250px;
+		font-size:1.2em;
+	}
+	.float-compare .fa{
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		font-size: 14px;
+		font-family: FontAwesome;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.float-compare .fa:before {
+		font-size:20px;
+		content: "\f021";
+		color:#b11116
+	}
+	.float-compare a > span {
+		color:#b11116
+	}
+	/*endproduct compare float*/
+	
+</style>
+<script type="text/javascript">
+//<![CDATA[
+	var SKIN_URL = 'https://www.pemmz.com/skin/frontend/sm_destino/default';
+	var TMPL_NAME = 'sm_destino';
+	var TMPL_COOKIE = ["layoutstyle","menustyle"];
+//]]>
+</script>
+
+<!--THEME CONFIG-->
+
+<!--GENERAL GOOGLE FONT-->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Ubuntu' />
+
+<!--GENERAL MAIN GOOGLE FONT-->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Ubuntu' />
+
+<!--BACKGROUND IMAGE-->
+
+<style>
+	
+	/*==GENERAL==*/
+	
+	body{
+					font-family:Ubuntu;
+				
+		
+		font-size: 12px;
+		color: #686868;
+		background-color: #FFFFFF;
+		background-repeat: ;
+		background-position: ;
+
+			}
+	
+	body a{
+		color: #478BCA;
+	}
+	
+	body a:hover{
+		color: #2A6496;
+	}
+	
+	/*===GOOGLE FONT ELEMENT===*/
+	
+			{
+			font-family:;
+		}
+		
+		
+	/*==HIDDEN BUTTON ADD TO CART, WISHLIST, COMPARE==*/
+	
+		
+		
+		
+		
+	/*==CUSTOM CSS==*/
+		
+</style>
+
+	
+
+<!--LISTING PRODUCT-->
+
+<style>
+@media (min-width: 1200px) {
+
+    .wide-style .container{
+        max-width: px;
+        width: 100%;
+    }
+
+	/*==1 COLUMN==*/
+	
+	.col1-layout .category-products .products-grid .item{
+		width: 20%	}
+
+    .col1-layout .category-products .products-grid .item:nth-child(5n+1){
+        clear: both;
+    }
+
+	/*==2 COLUMNS==*/
+	
+	.col2-left-layout .category-products .products-grid .item,
+	.col2-right-layout .category-products .products-grid .item{
+		width: 25%	}
+
+    .col2-left-layout .category-products .products-grid .item:nth-child(4n+1),
+    .col2-right-layout .category-products .products-grid .item:nth-child(4n+1){
+       clear: both;
+    }
+
+	/*==3 COLUMNS==*/
+	
+	.col3-layout .category-products .products-grid .item{
+		width: 25%	}
+
+    .col3-layout .category-products .products-grid .item:nth-child(4n+1){
+        clear: both;
+    }
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	/*==1 COLUMN==*/
+	
+	.col1-layout .category-products .products-grid .item{
+		width: 25%	}
+
+    .col1-layout .category-products .products-grid .item:nth-child(4n+1){
+        clear: both;
+    }
+
+	/*==2 COLUMNS==*/
+	
+	.col2-left-layout .category-products .products-grid .item,
+	.col2-right-layout .category-products .products-grid .item{
+		width: 33.333333333333%	}
+
+    .col2-left-layout .category-products .products-grid .item:nth-child(3n+1),
+    .col2-right-layout .category-products .products-grid .item:nth-child(3n+1){
+        clear: both;
+    }
+
+	/*==3 COLUMNS==*/
+	
+	.col3-layout .category-products .products-grid .item{
+		width: 33.333333333333%	}
+
+    .col3-layout .category-products .products-grid .item:nth-child(3n+1){
+        clear: both;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	/*==1 COLUMN==*/
+	
+	.col1-layout .category-products .products-grid .item{
+		width: 25%	}
+
+    .col1-layout .category-products .products-grid .item:nth-child(4n+1){
+        clear: both;
+    }
+
+	/*==2 COLUMNS==*/
+	
+	.col2-left-layout .category-products .products-grid .item,
+	.col2-right-layout .category-products .products-grid .item{
+		width: 33.333333333333%	}
+
+    .col2-left-layout .category-products .products-grid .item:nth-child(3n+1),
+    .col2-right-layout .category-products .products-grid .item:nth-child(3n+1){
+        clear: both;
+    }
+
+	/*==3 COLUMNS==*/
+	
+	.col3-layout .category-products .products-grid .item{
+		width: 33.333333333333%	}
+
+    .col3-layout .category-products .products-grid .item:nth-child(3n+1){
+        clear: both;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+	/*==1 COLUMN==*/
+	
+	.col1-layout .category-products .products-grid .item{
+		width: 50%	}
+
+    .col1-layout .category-products .products-grid .item:nth-child(2n+1){
+        clear: both;
+    }
+
+	/*==2 COLUMNS==*/
+	
+	.col2-left-layout .category-products .products-grid .item,
+	.col2-right-layout .category-products .products-grid .item{
+		width: 50%	}
+
+    .col2-left-layout .category-products .products-grid .item:nth-child(2n+1),
+    .col2-right-layout .category-products .products-grid .item:nth-child(2n+1){
+        clear: both;
+    }
+
+	/*==3 COLUMNS==*/
+	
+	.col3-layout .category-products .products-grid .item{
+		width: 50%	}
+
+    .col3-layout .category-products .products-grid .item:nth-child(2n+1){
+        clear: both;
+    }
+}
+
+@media (max-width: 480px) {
+
+	/*==1 COLUMN==*/
+	
+	.col1-layout .category-products .products-grid .item{
+		width: 50%	}
+
+    .col1-layout .category-products .products-grid .item:nth-child(2n+1){
+        clear: both;
+    }
+
+	/*==2 COLUMNS==*/
+	
+	.col2-left-layout .category-products .products-grid .item,
+	.col2-right-layout .category-products .products-grid .item{
+		width: 50%	}
+
+    .col2-left-layout .category-products .products-grid .item:nth-child(2n+1),
+    .col2-right-layout .category-products .products-grid .item:nth-child(2n+1){
+        clear: both;
+    }
+
+	/*==3 COLUMNS==*/
+	
+	.col3-layout .category-products .products-grid .item{
+		width: 50%	}
+
+    .col3-layout .category-products .products-grid .item:nth-child(2n+1){
+        clear: both;
+    }
+}
+</style>
+
+
+<!--SLIDER THUMB IMAGE WHEN HOVER PRODUCT-->
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".slider-img-thumb").lightSlider({
+            loop: false,
+            vertical:false,
+            slideMargin: 0,
+            item: 1,
+
+                            controls : false,
+            
+                            pager: false,
+                    });
+		
+		
+    });
+</script>
+
+</head>
+<body class=" catalog-product-view catalog-product-view product-asus-rog-gl504gw-i7715t-scar-ii-rtx2070-8gb-black full-width-style home-page-2 header-1">
+<div class="wrapper">
+        <noscript>
+        <div class="global-site-notice noscript">
+            <div class="notice-inner">
+                <p>
+                    <strong>JavaScript seems to be disabled in your browser.</strong><br />
+                    You must have JavaScript enabled in your browser to utilize the functionality of this website.                </p>
+            </div>
+        </div>
+    </noscript>
+    <div class="page">
+        
+
+<!--SHOW NEWSLETTER POPUP-->
+
+<!--GO TO TOP-->
+	<a id="yt-totop" href="javascript:void(0)" title="Go to Top"></a>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){  
+			$("#yt-totop").hide();
+			$(function () {
+				var wh = $(window).height();
+				var whtml =  $(document).height();
+				$(window).scroll(function () {
+					if ($(this).scrollTop() > whtml/10) {
+						$('#yt-totop').fadeIn();
+					} else {
+						$('#yt-totop').fadeOut();
+					}
+				});
+				$('#yt-totop').click(function () {
+					$('body,html').animate({
+						scrollTop: 0
+					}, 800);
+					return false;
+				});
+			});
+		});
+	</script>
+
+<!--REMOVE PADDING TOP-->
+<script type="text/javascript">
+	jQuery(document).ready(function($){  
+		if($('.breadcrumbs').length > 0){
+			$('.sidebar, .col-main').css({'padding-top':'0'});
+		}
+	});
+</script>
+
+
+<div class="header-container header-style-1">
+    <div class="header">
+		<div class="header-inner">
+			<div class="header-top">
+				<div class="container">
+                    <div class="row">
+					
+                        <div class="col-lg-12 col-md-12 col-sm-12 customer-container">
+                            <div class="header-top-right">
+                                <div class="welcome-text notloggedin">
+                                    <span>Welcome to Pemmz' Store </span>
+									
+									                                </div>
+
+                                                                <div class="customer-links">
+                                    <ul>
+                                        <li><a href="https://www.pemmz.com/customer/account/login/">Sign In</a></li>
+                                        <li><a href="https://www.pemmz.com/customer/account/create/">Create an Account</a></li>
+                                    </ul>
+                                </div>
+                                                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+
+			<div class="header-middle">
+				<div class="container">
+					<div class="row">
+                        <div class="col-sm-3 logo-container">
+                            <h1 class="logo">
+								<a href="https://www.pemmz.com/" title="Pemmz" class="logo">
+									<img src="https://www.pemmz.com/skin/frontend/sm-destino/default/images/logo.png" alt="Pemmz" />
+								</a>
+							</h1>
+                        </div>
+
+                        <div class="col-sm-9 right-container">
+                            <div class="search-wrapper">
+								<form id="search_mini_form" action="https://www.pemmz.com/catalogsearch/result/" method="get">
+    <div class="form-search clearfix">
+        <input id="search" type="text" name="q" value="" class="input-text typeahead" maxlength="128" />
+        <button type="submit" title="Search" class="button-search fa fa-search"><span><span>Search</span></span></button>
+        <div id="search_autocomplete" class="search-autocomplete"></div>
+        <script type="text/javascript">
+        //<![CDATA[
+            var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Search entire store here...');
+            searchForm.initAutocomplete('https://www.pemmz.com/catalogsearch/ajax/suggest/', 'search_autocomplete');
+        //]]>
+        </script>
+    </div>
+</form>
+							</div>
+
+							<div class="phone-header-container">
+                                <p><em class="fa fa-phone"></em> Call Us: (021) 569-73669</p>
+
+<p><em class="fa fa-whatsapp"></em> Sales: <a href="https://api.whatsapp.com/send?phone=6282223889889&amp;text=Hi%20Pemmz," target="_blank">082223889889</a> / <a href="https://api.whatsapp.com/send?phone=6281298011560&amp;text=Hi%20Pemmz," target="_blank">081298011560</a></p>
+<p><em class="fa fa-whatsapp"></em> Service: <a href="https://api.whatsapp.com/send?phone=6285280280100&amp;text=Hi%20Pemmz," target="_blank">085280280100</a> / <a href="https://api.whatsapp.com/send?phone=628999999279&amp;text=Hi%20Pemmz," target="_blank">08999999279</a></p>
+<p><em class="fa fa-commenting-o" aria-hidden="true"></em> Line: @Pemmz</p>
+
+                            </div>
+                            <div class="minicart-header">
+								
+<div id="sm_cartpro" class="sm-cartpro">
+	<div class="cartpro-title  cartpro-empty ">
+		<div class="info-minicart">
+			<h2 class="cartpro-label">My Cart</h2>
+			<div class="item-info">
+				<span class="cartpro-count">0</span><span class="label-item"> Item(s): </span>
+				<span class="total-price"><span class="price">Rp. 0,00</span></span>
+			</div>
+		</div>
+	</div>
+	<div class="cartpro-content">
+		
+<!--
+<div class="cartpro-error cartpro-message"></div>
+<div class="cartpro-success cartpro-message"></div>
+-->
+<div class="cartpro-wrapper">
+                    <p class="empty">You have no items in your shopping cart.</p>
+
+    </div>
+	</div>
+</div>
+							</div>
+                        </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="yt-menu">
+				<div class="menu-under">
+					<div class="container">
+						<div class="menu-larger">
+							<div class="row">
+							                                <div class="col-lg-12 col-md-12">
+										
+		
+	<div class="sm_megamenu_wrapper_horizontal_menu sambar" id="sm_megamenu_menu5d80653e7710d" data-sam="252930101568695614">
+		<div class="sambar-inner">
+			<ul class="css_effect sm-megamenu-hover sm_megamenu_menu sm_megamenu_menu_black" data-jsapi="on">
+									<li class="other-toggle   
+						sm_megamenu_lv1 sm_megamenu_drop parent   ">
+												<a class="sm_megamenu_head sm_megamenu_drop " href="https://www.pemmz.com/notebook"  id="sm_megamenu_2">
+																										<span class="sm_megamenu_icon sm_megamenu_nodesc">		
+																												<span class="sm_megamenu_title">Notebook</span>
+																	
+														
+													</span>
+																									</a>
+																																												<div class="sm-megamenu-child sm_megamenu_dropdown_5columns  ">	
+													<div class="sm_megamenu_col_5 sm_megamenu_firstcolumn  sm_megamenu_id2   "><div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id10   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id14   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">By Brand</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id15   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_content"><div class="row">
+    <div class="col-md-6"> <a title="Asus Laptop Gaming" href="/notebook/by-brands/asus.html">
+    	<img class="img-responsive" style="height:25px;margin-top: 7px;" title="Asus Laptop Gaming" alt="Asus Laptop Gaming" src="/media/wysiwyg/brand/Asus-Kecil.png"></a>
+        <p style="margin-top:5px;padding-top:1px;border-top:1px solid #aaa;color:#aaa;">Asus Laptop Gaming</p>
+    </div>
+    <div class="col-md-6"> <a title="MSI Laptop Gaming" href="/notebook/by-brands/msi.html">
+    	<img class="img-responsive" style="height:25px;margin-top: 7px;" title="MSI Laptop Gaming" alt="MSI Laptop Gaming" src="/media/wysiwyg/brand/MSI-Kecil.png"></a>
+        <p style="margin-top:5px;padding-top:1px;border-top:1px solid #aaa;color:#aaa;">MSI Laptop Gaming</p>
+    </div>
+    <div class="col-md-6"> <a title="Aorus Laptop Gaming" href="/notebook/by-brands/aorus.html">
+    	<img class="img-responsive" style="height:25px;margin-top: 7px;" title="Aorus Laptop Gaming" alt="Aorus Laptop Gaming" src="/media/wysiwyg/brand/Aorus-Kecil.png"></a>
+        <p style="margin-top:5px;padding-top:1px;border-top:1px solid #aaa;color:#aaa;">Aorus Laptop Gaming</p>
+    </div>
+    <div class="col-md-6"> <a title="Razer Laptop Gaming" href="/notebook/by-brands/razer.html">
+    	<img class="img-responsive" style="height:25px;margin-top: 7px;" title="Razer Laptop Gaming" alt="Razer Laptop Gaming" src="/media/wysiwyg/Razer_Logo.png"></a>
+        <p style="margin-top:5px;padding-top:1px;border-top:1px solid #aaa;color:#aaa;">Razer Laptop Gaming</p>
+    </div>
+    <div class="col-md-6"> <a title="Gigabyte Laptop Gaming" href="/catalogsearch/result/?q=gigabyte">
+    	<img class="img-responsive" style="height:25px;margin-top: 7px;" title="Gigabyte Laptop Gaming" alt="Gigabyte Laptop Gaming" src="/media/wysiwyg/gigabyte_1.png"></a>
+        <p style="margin-top:5px;padding-top:1px;border-top:1px solid #aaa;color:#aaa;">Gigabyte Laptop Gaming</p>
+    </div>
+    <div class="col-md-6"> <a title="HP Laptop Gaming" href="/notebook/by-brands/hp.html">
+        <img class="img-responsive" style="height:25px;margin-top: 7px;" title="HP Laptop Gaming" alt="logo hp" src="/media/wysiwyg/hp_logo1.png"></a>
+        <p style="margin-top:5px;padding-top:1px;border-top:1px solid #aaa;color:#aaa;">HP Laptop Gaming</p>
+    </div>
+    <div class="col-md-6"> <a title="Lenovo Laptop Gaming" href="/notebook/by-brands/lenovo.html">
+    	<img class="img-responsive" style="height:25px;margin-top: 7px;" alt="Lenovo Laptop Gaming title=" src="/media/wysiwyg/lenovojp_1.jpg"></a>
+        <p style="margin-top:5px;padding-top:1px;border-top:1px solid #aaa;color:#aaa;">Lenovo Laptop Gaming</p>
+    </div>
+    <div class="col-md-6"> <a title="Alienware Laptop Gaming" href="/notebook/by-brands/alienware.html">
+        <img class="img-responsive" style="height:25px;margin-top: 7px;" title="Alienware Laptop Gaming" alt="Alienware Laptop Gaming " src="/media/wysiwyg/alienware.png"></a>
+        <p style="margin-top:5px;padding-top:1px;border-top:1px solid #aaa;color:#aaa;">Alienware Laptop Gaming</p>
+    </div>
+    <div class="col-md-6"> <a title="Predator Laptop Gaming" href="/notebook/by-brands/predator">
+    	<img class="img-responsive" style="height:25px;margin-top: 7px;" title="Predator Laptop Gaming" alt="" src="/media/wysiwyg/acer_predator.png"></a>
+        <p style="margin-top:5px;padding-top:1px;border-top:1px solid #aaa;color:#aaa;">Predator Laptop Gaming</p>
+    </div>
+<div class="col-md-6"> <a title="Predator Laptop Gaming" href="/notebook/by-brands/dell">
+    	<img class="img-responsive" style="height:25px;margin-top: 7px;" title="Dell Laptop Gaming" alt="" src="/media/wysiwyg/Dell_Logo.png"></a>
+        <p style="margin-top:5px;padding-top:1px;border-top:1px solid #aaa;color:#aaa;">Dell Laptop Gaming</p>
+    </div>
+</div></div></div></div></div><div class="sm_megamenu_col_1  sm_megamenu_id11   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id16   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">By Use</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id17   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-use/gaming"  ><span class="sm_megamenu_title_lv4">Gaming</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id18   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-use/office-computing"  ><span class="sm_megamenu_title_lv4">Office Computing</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id19   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-use/multimedia"  ><span class="sm_megamenu_title_lv4">Multimedia</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id20   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-use/design-workstation"  ><span class="sm_megamenu_title_lv4">Design & Workstation</span></a></div></div></div></div></div><div class="sm_megamenu_col_1  sm_megamenu_id12   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id21   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">By Screen Size</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id22   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-screen-size/less-than-12"  ><span class="sm_megamenu_title_lv4">Less than 12"</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id25   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-screen-size/15-16"  ><span class="sm_megamenu_title_lv4">15-16"</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id23   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-screen-size/13-3"  ><span class="sm_megamenu_title_lv4">13.3"</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id24   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-screen-size/14"  ><span class="sm_megamenu_title_lv4">14"</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id26   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-screen-size/17-and-above"  ><span class="sm_megamenu_title_lv4">17" and above</span></a></div></div></div></div></div><div class="sm_megamenu_col_1  sm_megamenu_id13   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id27   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">By Price Range</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id28   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-price/price-up-to-5mil"  ><span class="sm_megamenu_title_lv4">0 - 5000000</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id34   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-price/price-above-30mil"  ><span class="sm_megamenu_title_lv4">Above 30000000</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id33   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-price/price-up-to-30mil"  ><span class="sm_megamenu_title_lv4">25000001 - 30000000</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id29   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-price/price-up-to-10mil"  ><span class="sm_megamenu_title_lv4">5000001 - 10000000</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id30   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-price/price-up-to-15mil"  ><span class="sm_megamenu_title_lv4">10000001 - 15000000</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id31   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-price/price-up-to-20mil"  ><span class="sm_megamenu_title_lv4">15000001 - 20000000</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id32   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/notebook/by-price/price-up-to-1600"  ><span class="sm_megamenu_title_lv4">20000001 - 25000000</span></a></div></div></div></div></div></div>												</div>
+												</li>
+									<li class="other-toggle   
+						sm_megamenu_lv1 sm_megamenu_drop parent   ">
+												<a class="sm_megamenu_head sm_megamenu_drop " href="https://www.pemmz.com/desktops"  id="sm_megamenu_3">
+																										<span class="sm_megamenu_icon sm_megamenu_nodesc">		
+																												<span class="sm_megamenu_title">Desktop</span>
+																	
+														
+													</span>
+																									</a>
+																																												<div class="sm-megamenu-child sm_megamenu_dropdown_4columns  ">	
+													<div class="sm_megamenu_col_4 sm_megamenu_firstcolumn  sm_megamenu_id3   "><div class="sm_megamenu_col_1 sm_megamenu_firstcolumn  sm_megamenu_id35   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id39   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">By Brands</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id40   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-brands/pemmz-custom"  ><span class="sm_megamenu_title_lv4">PEMMZ Custom</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id41   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-brands/asus"  ><span class="sm_megamenu_title_lv4">ASUS</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id42   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-brands/acer"  ><span class="sm_megamenu_title_lv4">Acer</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id43   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-brands/alienware"  ><span class="sm_megamenu_title_lv4">Alienware</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id44   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-brands/dell"  ><span class="sm_megamenu_title_lv4">Dell</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id45   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-brands/hp"  ><span class="sm_megamenu_title_lv4">HP</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id46   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-brands/lenovo"  ><span class="sm_megamenu_title_lv4">Lenovo</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id47   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-brands/msi"  ><span class="sm_megamenu_title_lv4">MSI</span></a></div></div></div></div></div><div class="sm_megamenu_col_1  sm_megamenu_id36   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id48   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">BY CPUS</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id49   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-cpus/dual-quad-core"  ><span class="sm_megamenu_title_lv4">Dual/Quad Core</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id50   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-cpus/intel-core-i3-i5-i7"  ><span class="sm_megamenu_title_lv4">Latest Intel Core I3/I5/I7</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id51   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-cpus/amd"  ><span class="sm_megamenu_title_lv4">AMD</span></a></div></div></div></div></div><div class="sm_megamenu_col_1  sm_megamenu_id37   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id52   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">By VGA Cards</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id53   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-vga-cards/nvdia"  ><span class="sm_megamenu_title_lv4">NVDIA</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id55   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-vga-cards/intel"  ><span class="sm_megamenu_title_lv4">INTEL</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id54   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/desktops/by-vga-cards/amd"  ><span class="sm_megamenu_title_lv4">AMD</span></a></div></div></div></div></div><div class="sm_megamenu_col_2 sm_megamenu_firstcolumn  sm_megamenu_id38   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id56   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">Custom Your Own</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id57   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_content"><img alt="" src="/media/wysiwyg/custom.png" height="83" width="96"></div></div></div></div></div>												</div>
+												</li>
+									<li class="other-toggle   
+						sm_megamenu_lv1 sm_megamenu_drop parent   ">
+												<a class="sm_megamenu_head sm_megamenu_drop " href="https://www.pemmz.com/accessories"  id="sm_megamenu_5">
+																										<span class="sm_megamenu_icon sm_megamenu_nodesc">		
+																												<span class="sm_megamenu_title">Accessories</span>
+																	
+														
+													</span>
+																									</a>
+																																												<div class="sm-megamenu-child sm_megamenu_dropdown_6columns  ">	
+													<div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id5   "><div class="sm_megamenu_col_1 sm_megamenu_firstcolumn  sm_megamenu_id90   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id94   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">Peripheral</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id97   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/peripheral/keyboards"  ><span class="sm_megamenu_title_lv4">Keyboard</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id101   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/peripheral/external-hard-drive"  ><span class="sm_megamenu_title_lv4">External Hard Drive</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id98   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/peripheral/mouse"  ><span class="sm_megamenu_title_lv4">Mouse</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id99   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/peripheral/headset-earphones"  ><span class="sm_megamenu_title_lv4">Headset</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id100   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/peripheral/cooling-pad"  ><span class="sm_megamenu_title_lv4">Cooling Pad</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id102   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/peripheral/bag-case"  ><span class="sm_megamenu_title_lv4">Bag and Case</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id103   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/promo/promo-b-b"  ><span class="sm_megamenu_title_lv4">Promo B&B</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id104   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/peripheral/others"  ><span class="sm_megamenu_title_lv4">Others</span></a></div></div></div></div></div><div class="sm_megamenu_col_1  sm_megamenu_id91   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id95   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">Software</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id105   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/software"  ><span class="sm_megamenu_title_lv4">Software</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id106   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/software/pcgames"  ><span class="sm_megamenu_title_lv4">PC Games</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id107   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/software/antivirus"  ><span class="sm_megamenu_title_lv4">Anti Virus</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id108   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/software/operatingsystem"  ><span class="sm_megamenu_title_lv4">Operating System</span></a></div></div></div></div></div><div class="sm_megamenu_col_4  sm_megamenu_id93   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id96   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_content"><div class="col-md-2 text-center">
+    <a href="/accessories/peripheral/razer">
+        <img style="height:50px" alt="/accessories/peripheral/razer" src="/media/wysiwyg/Razer_Logo.png" style="img-responsive">
+    </a>
+</div>
+<div class="col-md-2 text-center">
+    <a href="/accessories/by-brands/corsair">
+        <img style="height:50px" alt="" src="/media/wysiwyg/Corsair-logo-300x225.png" style="img-responsive">
+    </a>
+</div>
+<div class="col-md-2 text-center">
+    <a href="/accessories/by-brands/steel-series">
+        <img style="height:50px" alt="steelseries" src="/media/wysiwyg//logo-steelseries.png" style="img-responsive">
+    </a>
+</div>
+<div class="col-md-2 text-center">
+    <a href="/accessories/thermaltake">
+        <img style="height:50px" alt="" src="/media/wysiwyg/Ttesport_Logo.png" style="img-responsive">
+    </a>
+</div>
+<div class="col-md-2 text-center">
+    <a href="/accessories/by-brands/logitech">
+        <img style="height:50px" alt="logitech" src="/media/wysiwyg/Logitech_G_Series_Logo.png" style="img-responsive">
+    </a>
+</div>
+<div class="col-md-2 text-center">
+    <a href="/accessories/peripheral/mouse/armaggeddon">
+        <img style="height:50px" alt="" src="/media/wysiwyg/x-armaggeddon-logo-600x315.png" style="img-responsive">
+    </a>
+</div>
+<div class="col-md-2 text-center">
+    <a href="/accessories/by-brands/brazen">
+        <img style="height:50px" alt="Brazen" src="/media/wysiwyg/slideshow/mini/BrazenSoundChairsBlack-636x356pemmz.jpg" style="img-responsive">
+    </a>
+</div></div></div></div></div>												</div>
+												</li>
+									<li class="other-toggle   
+						sm_megamenu_lv1 sm_megamenu_drop parent   ">
+												<a class="sm_megamenu_head sm_megamenu_drop " href="https://www.pemmz.com/service-parts"  id="sm_megamenu_7">
+																										<span class="sm_megamenu_icon sm_megamenu_nodesc">		
+																												<span class="sm_megamenu_title">Parts</span>
+																	
+														
+													</span>
+																									</a>
+																																												<div class="sm-megamenu-child sm_megamenu_dropdown_4columns  ">	
+													<div class="sm_megamenu_col_4 sm_megamenu_firstcolumn  sm_megamenu_id7   "><div class="sm_megamenu_col_1 sm_megamenu_firstcolumn  sm_megamenu_id109   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id112   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">Notebook</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id113   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/notebooks/motherboard"  ><span class="sm_megamenu_title_lv4">Motherboard</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id115   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/notebooks/memory"  ><span class="sm_megamenu_title_lv4">Memory</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id114   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/notebooks/pci-card"  ><span class="sm_megamenu_title_lv4">PCI Card</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id116   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/notebooks/monitors"  ><span class="sm_megamenu_title_lv4">Monitor</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id117   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/notebooks/hard-drive-ssd"  ><span class="sm_megamenu_title_lv4">Hard Drive / SSD</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id118   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/notebooks/fan"  ><span class="sm_megamenu_title_lv4">Fan</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id119   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/notebooks/vga"  ><span class="sm_megamenu_title_lv4">VGA</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id120   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/notebooks/processor"  ><span class="sm_megamenu_title_lv4">Processor</span></a></div></div></div></div></div><div class="sm_megamenu_col_1  sm_megamenu_id110   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id121   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><span class="sm_megamenu_title_lv3">PC</span></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id122   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/pc/motherboard"  ><span class="sm_megamenu_title_lv4">Motherboard</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id130   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/pc/processor"  ><span class="sm_megamenu_title_lv4">Processor</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id123   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/pc/pci-card"  ><span class="sm_megamenu_title_lv4">PCI Card</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id124   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/pc/memory"  ><span class="sm_megamenu_title_lv4">Memory</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id125   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/accessories/peripheral/monitor"  ><span class="sm_megamenu_title_lv4">Monitor</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id126   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/pc/hard-drive-ssd"  ><span class="sm_megamenu_title_lv4">Hard Drive / SSD</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id127   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/pc/power-supply"  ><span class="sm_megamenu_title_lv4">Power Supply</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id128   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/pc/fan"  ><span class="sm_megamenu_title_lv4">Fan</span></a></div></div></div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id129   "><div class="sm_megamenu_head_item ">	<div class="sm_megamenu_title"><a class="sm_megamenu_nodrop " href="https://www.pemmz.com/service-parts/pc/vga"  ><span class="sm_megamenu_title_lv4">VGA</span></a></div></div></div></div></div><div class="sm_megamenu_col_4 sm_megamenu_firstcolumn  sm_megamenu_id111   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_col_6 sm_megamenu_firstcolumn  sm_megamenu_id131   "><div class="sm_megamenu_head_item ">	</div><div class="sm_megamenu_content"><div class="col-md-3 text-center">
+	<a href="/service-parts/adata">
+		<img style="margin-bottom:10px;" alt="adata" src="/media/wysiwyg/ADATA.png" style="img-responsive">
+	</a>
+</div>
+<div class="col-md-3 text-center">
+	<a href="">
+		<img style="margin-bottom:10px;" alt="seagate" src="/media/wysiwyg/Seagate_Logo.png" style="img-responsive">
+	</a>
+</div>
+<div class="col-md-3 text-center">
+	<a href="/service-parts/notebooks/memory/gskill">
+	<img style="margin-bottom:10px;" alt="g skil" src="/media/wysiwyg/G-SKILL.png" style="img-responsive">
+	</a>
+</div>
+<div class="col-md-3 text-center">
+	<a href="/service-parts/notebooks/memory/team">
+		<img style="margin-bottom:10px;" alt="team" src="/media/wysiwyg/Logo_Team_275_.png" style="img-responsive">
+	</a>
+</div>
+<div class="col-md-3 text-center">
+        <a href="/accessories/by-brands/samsung">
+		<img style="margin-bottom:10px;" alt="team" src="/media/wysiwyg/Samsung_Logo.png" style="img-responsive">
+        </a>
+</div>
+<div class="col-md-3 text-center">
+	<a href="/accessories/by-brands/thermaltake">
+		<img style="margin-bottom:10px;" alt="team" src="/media/wysiwyg/Thermaltake_Logo.png" style="img-responsive">
+	</a>
+</div>
+<div class="col-md-3 text-center">
+	<img style="margin-bottom:10px;" alt="" src="/media/wysiwyg/Intel_Logo.png" style="img-responsive">
+</div>
+<div class="col-md-3 text-center">
+	<img style="margin-bottom:10px;" alt="" src="/media/wysiwyg/AMD_Logo.png" style="img-responsive">
+</div>
+<div class="col-md-3 text-center">
+	<img style="margin-bottom:10px;" alt="" src="/media/wysiwyg/notebook-parts.png" style="img-responsive">
+</div></div></div></div></div>												</div>
+												</li>
+									<li class="other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http:////service.pemmz.com/"  id="sm_megamenu_132">
+																										<span class="sm_megamenu_icon sm_megamenu_nodesc">		
+																												<span class="sm_megamenu_title">Service</span>
+																	
+														
+													</span>
+																									</a>
+																																	<li class="other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://promo.pemmz.com/"  id="sm_megamenu_8">
+																										<span class="sm_megamenu_icon sm_megamenu_nodesc">		
+																												<span class="sm_megamenu_title">Promo</span>
+																	
+														
+													</span>
+																									</a>
+																																	<li class="other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.pemmzchannel.com/category/review/"  id="sm_megamenu_133">
+																										<span class="sm_megamenu_icon sm_megamenu_nodesc">		
+																												<span class="sm_megamenu_title">Review</span>
+																	
+														
+													</span>
+																									</a>
+																															<li class="other-toggle sm_megamenu_lv1 sm_megamenu_nodrop">
+					<a class="sm_megamenu_head sm_megamenu_nodrop " href="//www.pemmz.com/contact-pemmz" id="sm_megamenu_999">
+						<span class="sm_megamenu_icon sm_megamenu_nodesc">		
+							<span class="sm_megamenu_title">Contact Us</span>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--End Module-->
+
+<script type="text/javascript">
+// <![CDATA[ 
+	jQuery(document).ready(function($){
+		var menu_width = $('.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu').width();
+
+		$('.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu > li').mouseover(function() {
+			$(this).addClass('hover_item');
+			var item_position =  $(this).position().left;
+			var dropdown_item = $(this).children('div').width();
+			if(dropdown_item > (menu_width - item_position)){
+				var dropdown_item = $(this).children('div').css({'right':'0', 'left': 'auto'});
+			}
+		})
+		.mouseout(function() {
+			$('.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu > li').removeClass('hover_item');
+		});
+		
+		$('.sm_megamenu_wrapper_horizontal_menu .rw-url > a.sm_megamenu_head').attr('href', 'https://www.pemmz.com/');
+	});
+// ]]> 
+</script>
+
+
+
+								</div>
+														</div>
+						</div>
+
+						<div class="mobile-menu">
+							<div class="row">
+								<div class="col-lg-12 col-md-12">
+									
+	<div class="mobile-menu-wrapper aaa">
+		<div class="btn-mobile-wrapper">
+			<a class="btn-menu-mobile btn-sidebar" title="Categories"><span>Categories</span></a>
+		</div>
+		<div class="dropdown_sidebar">
+			<ul class="nav-mobile">
+				<li  class="level0 nav-1 first level-top parent"><a href="https://www.pemmz.com/notebook"  class="level-top" ><span>Notebook</span></a><ul class="level0"><li  class="level1 nav-1-1 first parent"><a href="https://www.pemmz.com/notebook/by-brands" ><span>By Brands</span></a><ul class="level1"><li  class="level2 nav-1-1-1 first parent"><a href="https://www.pemmz.com/notebook/by-brands/xenom" ><span>XENOM</span></a><ul class="level2"><li  class="level3 nav-1-1-1-1 first last"><a href="https://www.pemmz.com/notebook/by-brands/xenom/xenom-corner" ><span>Special Xenom Corner</span></a></li></ul></li><li  class="level2 nav-1-1-2"><a href="https://www.pemmz.com/notebook/by-brands/msi" ><span>MSI</span></a></li><li  class="level2 nav-1-1-3"><a href="https://www.pemmz.com/notebook/by-brands/razer" ><span>Razer</span></a></li><li  class="level2 nav-1-1-4"><a href="https://www.pemmz.com/notebook/by-brands/hp" ><span>HP</span></a></li><li  class="level2 nav-1-1-5"><a href="https://www.pemmz.com/notebook/by-brands/alienware" ><span>Alienware</span></a></li><li  class="level2 nav-1-1-6"><a href="https://www.pemmz.com/notebook/by-brands/asus" ><span>Asus</span></a></li><li  class="level2 nav-1-1-7"><a href="https://www.pemmz.com/notebook/by-brands/aorus" ><span>Aorus</span></a></li><li  class="level2 nav-1-1-8"><a href="https://www.pemmz.com/notebook/by-brands/gigabyte" ><span>Gigabyte</span></a></li><li  class="level2 nav-1-1-9"><a href="https://www.pemmz.com/notebook/by-brands/lenovo" ><span>Lenovo</span></a></li><li  class="level2 nav-1-1-10"><a href="https://www.pemmz.com/notebook/by-brands/predator" ><span>Predator</span></a></li><li  class="level2 nav-1-1-11 last"><a href="https://www.pemmz.com/notebook/by-brands/huawei" ><span>Huawei</span></a></li></ul></li><li  class="level1 nav-1-2 parent"><a href="https://www.pemmz.com/notebook/by-use" ><span>By Use</span></a><ul class="level1"><li  class="level2 nav-1-2-1 first"><a href="https://www.pemmz.com/notebook/by-use/gaming" ><span>Gaming</span></a></li><li  class="level2 nav-1-2-2"><a href="https://www.pemmz.com/notebook/by-use/office-computing" ><span>Office Computing</span></a></li><li  class="level2 nav-1-2-3"><a href="https://www.pemmz.com/notebook/by-use/multimedia" ><span>Multimedia</span></a></li><li  class="level2 nav-1-2-4 last"><a href="https://www.pemmz.com/notebook/by-use/design-workstation" ><span>Design &amp; Workstation</span></a></li></ul></li><li  class="level1 nav-1-3 parent"><a href="https://www.pemmz.com/notebook/by-screen-size" ><span>By Screen Size</span></a><ul class="level1"><li  class="level2 nav-1-3-1 first"><a href="https://www.pemmz.com/notebook/by-screen-size/less-than-12" ><span>less than 12&quot;</span></a></li><li  class="level2 nav-1-3-2"><a href="https://www.pemmz.com/notebook/by-screen-size/13-3" ><span>13.3&quot;</span></a></li><li  class="level2 nav-1-3-3"><a href="https://www.pemmz.com/notebook/by-screen-size/14" ><span>14&quot;</span></a></li><li  class="level2 nav-1-3-4"><a href="https://www.pemmz.com/notebook/by-screen-size/15-16" ><span>15-16&quot;</span></a></li><li  class="level2 nav-1-3-5 last"><a href="https://www.pemmz.com/notebook/by-screen-size/17-and-above" ><span>17&quot; and  above</span></a></li></ul></li><li  class="level1 nav-1-4 last parent"><a href="https://www.pemmz.com/notebook/by-price" ><span>By Price Range</span></a><ul class="level1"><li  class="level2 nav-1-4-1 first"><a href="https://www.pemmz.com/notebook/by-price/price-up-to-5mil" ><span>0 - 5000000</span></a></li><li  class="level2 nav-1-4-2"><a href="https://www.pemmz.com/notebook/by-price/price-up-to-10mil" ><span>5000001 - 10000000</span></a></li><li  class="level2 nav-1-4-3"><a href="https://www.pemmz.com/notebook/by-price/price-up-to-15mil" ><span>10000001 - 15000000</span></a></li><li  class="level2 nav-1-4-4"><a href="https://www.pemmz.com/notebook/by-price/price-up-to-20mil" ><span>15000001 - 20000000</span></a></li><li  class="level2 nav-1-4-5"><a href="https://www.pemmz.com/notebook/by-price/price-up-to-1600" ><span>20000001 - 25000000</span></a></li><li  class="level2 nav-1-4-6"><a href="https://www.pemmz.com/notebook/by-price/price-up-to-30mil" ><span>25000001 - 30000000</span></a></li><li  class="level2 nav-1-4-7 last"><a href="https://www.pemmz.com/notebook/by-price/price-above-30mil" ><span>Above 30000000</span></a></li></ul></li></ul></li><li  class="level0 nav-2 level-top parent"><a href="https://www.pemmz.com/desktops"  class="level-top" ><span>Desktop </span></a><ul class="level0"><li  class="level1 nav-2-1 first parent"><a href="https://www.pemmz.com/desktops/by-brands" ><span>By Brands</span></a><ul class="level1"><li  class="level2 nav-2-1-1 first"><a href="https://www.pemmz.com/desktops/by-brands/pemmz-custom" ><span>Pemmz Custom</span></a></li><li  class="level2 nav-2-1-2"><a href="https://www.pemmz.com/desktops/by-brands/asus" ><span>Asus</span></a></li><li  class="level2 nav-2-1-3"><a href="https://www.pemmz.com/desktops/by-brands/acer" ><span>Acer</span></a></li><li  class="level2 nav-2-1-4"><a href="https://www.pemmz.com/desktops/by-brands/alienware" ><span>Alienware</span></a></li><li  class="level2 nav-2-1-5"><a href="https://www.pemmz.com/desktops/by-brands/dell" ><span>Dell</span></a></li><li  class="level2 nav-2-1-6"><a href="https://www.pemmz.com/desktops/by-brands/hp" ><span>HP</span></a></li><li  class="level2 nav-2-1-7"><a href="https://www.pemmz.com/desktops/by-brands/lenovo" ><span>Lenovo</span></a></li><li  class="level2 nav-2-1-8 last"><a href="https://www.pemmz.com/desktops/by-brands/msi" ><span>MSI</span></a></li></ul></li><li  class="level1 nav-2-2 parent"><a href="https://www.pemmz.com/desktops/by-cpus" ><span>By CPUs</span></a><ul class="level1"><li  class="level2 nav-2-2-1 first"><a href="https://www.pemmz.com/desktops/by-cpus/dual-quad-core" ><span>Dual/Quad Core</span></a></li><li  class="level2 nav-2-2-2"><a href="https://www.pemmz.com/desktops/by-cpus/intel-core-i3-i5-i7" ><span>Intel Core i3/i5/i7</span></a></li><li  class="level2 nav-2-2-3 last"><a href="https://www.pemmz.com/desktops/by-cpus/amd" ><span>AMD</span></a></li></ul></li><li  class="level1 nav-2-3 last parent"><a href="https://www.pemmz.com/desktops/by-vga-cards" ><span>By VGA Cards</span></a><ul class="level1"><li  class="level2 nav-2-3-1 first"><a href="https://www.pemmz.com/desktops/by-vga-cards/nvdia" ><span>NVDIA</span></a></li><li  class="level2 nav-2-3-2"><a href="https://www.pemmz.com/desktops/by-vga-cards/intel" ><span>INTEL</span></a></li><li  class="level2 nav-2-3-3 last"><a href="https://www.pemmz.com/desktops/by-vga-cards/amd" ><span>AMD</span></a></li></ul></li></ul></li><li  class="level0 nav-3 level-top parent"><a href="https://www.pemmz.com/accessories"  class="level-top" ><span>Accessories </span></a><ul class="level0"><li  class="level1 nav-3-1 first parent"><a href="https://www.pemmz.com/accessories/peripheral" ><span>Peripheral</span></a><ul class="level1"><li  class="level2 nav-3-1-1 first"><a href="https://www.pemmz.com/accessories/peripheral/desktop-case" ><span>Desktop Case</span></a></li><li  class="level2 nav-3-1-2 parent"><a href="https://www.pemmz.com/accessories/peripheral/mouse" ><span>Mouse</span></a><ul class="level2"><li  class="level3 nav-3-1-2-1 first"><a href="https://www.pemmz.com/accessories/peripheral/mouse/razer-mouse" ><span>Razer</span></a></li><li  class="level3 nav-3-1-2-2"><a href="https://www.pemmz.com/accessories/peripheral/mouse/steelseries-mouse" ><span>SteelSeries</span></a></li><li  class="level3 nav-3-1-2-3"><a href="https://www.pemmz.com/accessories/peripheral/mouse/roccat-mouse" ><span>Roccat</span></a></li><li  class="level3 nav-3-1-2-4"><a href="https://www.pemmz.com/accessories/peripheral/mouse/ozone-mouse" ><span>Ozone</span></a></li><li  class="level3 nav-3-1-2-5"><a href="https://www.pemmz.com/accessories/peripheral/mouse/genius-mouse" ><span>Genius</span></a></li><li  class="level3 nav-3-1-2-6"><a href="https://www.pemmz.com/accessories/peripheral/mouse/asus" ><span>Asus</span></a></li><li  class="level3 nav-3-1-2-7"><a href="https://www.pemmz.com/accessories/peripheral/mouse/cooler-master" ><span>Cooler Master</span></a></li><li  class="level3 nav-3-1-2-8"><a href="https://www.pemmz.com/accessories/peripheral/mouse/logitech" ><span>Logitech</span></a></li><li  class="level3 nav-3-1-2-9"><a href="https://www.pemmz.com/accessories/peripheral/mouse/madcatz" ><span>Madcatz</span></a></li><li  class="level3 nav-3-1-2-10 last"><a href="https://www.pemmz.com/accessories/peripheral/mouse/corsair" ><span>Corsair</span></a></li></ul></li><li  class="level2 nav-3-1-3"><a href="https://www.pemmz.com/accessories/peripheral/keyboards" ><span>Keyboards</span></a></li><li  class="level2 nav-3-1-4 parent"><a href="https://www.pemmz.com/accessories/peripheral/mouse-pad" ><span>Mouse Pad</span></a><ul class="level2"><li  class="level3 nav-3-1-4-1 first"><a href="https://www.pemmz.com/accessories/peripheral/mouse-pad/razer-mousepad" ><span>Razer</span></a></li><li  class="level3 nav-3-1-4-2"><a href="https://www.pemmz.com/accessories/peripheral/mouse-pad/steelseries-mousepad" ><span>Steelseries</span></a></li><li  class="level3 nav-3-1-4-3"><a href="https://www.pemmz.com/accessories/peripheral/mouse-pad/roccat-mouse" ><span>Roccat</span></a></li><li  class="level3 nav-3-1-4-4"><a href="https://www.pemmz.com/accessories/peripheral/mouse-pad/cooler-master" ><span>Cooler Master</span></a></li><li  class="level3 nav-3-1-4-5 last"><a href="https://www.pemmz.com/accessories/peripheral/mouse-pad/cougar" ><span>Cougar</span></a></li></ul></li><li  class="level2 nav-3-1-5"><a href="https://www.pemmz.com/accessories/peripheral/headset-earphones" ><span>Headset &amp; Earphones</span></a></li><li  class="level2 nav-3-1-6"><a href="https://www.pemmz.com/accessories/peripheral/speakers" ><span>Speakers</span></a></li><li  class="level2 nav-3-1-7"><a href="https://www.pemmz.com/accessories/peripheral/external-hard-drive" ><span>External Hard Drive</span></a></li><li  class="level2 nav-3-1-8"><a href="https://www.pemmz.com/accessories/peripheral/others" ><span>Others</span></a></li><li  class="level2 nav-3-1-9"><a href="https://www.pemmz.com/accessories/peripheral/bag-case" ><span>Bag and Case</span></a></li><li  class="level2 nav-3-1-10"><a href="https://www.pemmz.com/accessories/peripheral/cooling-pad" ><span>Cooling Pad</span></a></li><li  class="level2 nav-3-1-11"><a href="https://www.pemmz.com/accessories/peripheral/docking-hdd" ><span>Docking HDD</span></a></li><li  class="level2 nav-3-1-12"><a href="https://www.pemmz.com/accessories/peripheral/gaming-controller" ><span>Gaming Controller</span></a></li><li  class="level2 nav-3-1-13"><a href="https://www.pemmz.com/accessories/peripheral/touchpad" ><span>Touchpad</span></a></li><li  class="level2 nav-3-1-14"><a href="https://www.pemmz.com/accessories/peripheral/gaming-chair" ><span>Gaming Chair</span></a></li><li  class="level2 nav-3-1-15 parent"><a href="https://www.pemmz.com/accessories/peripheral/monitor" ><span>Monitor</span></a><ul class="level2"><li  class="level3 nav-3-1-15-1 first last"><a href="https://www.pemmz.com/accessories/peripheral/monitor/lg" ><span>LG</span></a></li></ul></li><li  class="level2 nav-3-1-16"><a href="https://www.pemmz.com/accessories/peripheral/usb-hub" ><span>USB Hub</span></a></li><li  class="level2 nav-3-1-17 last"><a href="https://www.pemmz.com/accessories/peripheral/hdd-caddy" ><span>HDD Caddy</span></a></li></ul></li><li  class="level1 nav-3-2 last parent"><a href="https://www.pemmz.com/accessories/software" ><span>Software</span></a><ul class="level1"><li  class="level2 nav-3-2-1 first"><a href="https://www.pemmz.com/accessories/software/operatingsystem" ><span>Operating System</span></a></li><li  class="level2 nav-3-2-2 last"><a href="https://www.pemmz.com/accessories/software/pcgames" ><span>PC Games</span></a></li></ul></li></ul></li><li  class="level0 nav-4 level-top parent"><a href="https://www.pemmz.com/service-parts"  class="level-top" ><span>Parts</span></a><ul class="level0"><li  class="level1 nav-4-1 first parent"><a href="https://www.pemmz.com/service-parts/notebooks" ><span>Notebook</span></a><ul class="level1"><li  class="level2 nav-4-1-1 first"><a href="https://www.pemmz.com/service-parts/notebooks/memory" ><span>Memory</span></a></li><li  class="level2 nav-4-1-2"><a href="https://www.pemmz.com/service-parts/notebooks/monitors" ><span>Monitors</span></a></li><li  class="level2 nav-4-1-3"><a href="https://www.pemmz.com/service-parts/notebooks/motherboard" ><span>Motherboard</span></a></li><li  class="level2 nav-4-1-4"><a href="https://www.pemmz.com/service-parts/notebooks/pci-card" ><span>PCI Card</span></a></li><li  class="level2 nav-4-1-5"><a href="https://www.pemmz.com/service-parts/notebooks/hard-drive-ssd" ><span>Hard Drive / SSD</span></a></li><li  class="level2 nav-4-1-6"><a href="https://www.pemmz.com/service-parts/notebooks/battery-and-adapter" ><span>Battery and Adapter</span></a></li><li  class="level2 nav-4-1-7"><a href="https://www.pemmz.com/service-parts/notebooks/fan" ><span>Fan</span></a></li><li  class="level2 nav-4-1-8"><a href="https://www.pemmz.com/service-parts/notebooks/vga" ><span>Vga</span></a></li><li  class="level2 nav-4-1-9"><a href="https://www.pemmz.com/service-parts/notebooks/processor" ><span>Processor</span></a></li><li  class="level2 nav-4-1-10"><a href="https://www.pemmz.com/service-parts/notebooks/odd" ><span>Odd</span></a></li><li  class="level2 nav-4-1-11 last"><a href="https://www.pemmz.com/service-parts/notebooks/keyboard" ><span>Keyboard</span></a></li></ul></li><li  class="level1 nav-4-2 last parent"><a href="https://www.pemmz.com/service-parts/pc" ><span>Pc</span></a><ul class="level1"><li  class="level2 nav-4-2-1 first"><a href="https://www.pemmz.com/service-parts/pc/motherboard" ><span>Motherboard</span></a></li><li  class="level2 nav-4-2-2"><a href="https://www.pemmz.com/service-parts/pc/pci-card" ><span>PCI Card</span></a></li><li  class="level2 nav-4-2-3"><a href="https://www.pemmz.com/service-parts/pc/memory" ><span>Memory</span></a></li><li  class="level2 nav-4-2-4"><a href="https://www.pemmz.com/service-parts/pc/hard-drive-ssd" ><span>Hard Drive / SSD</span></a></li><li  class="level2 nav-4-2-5"><a href="https://www.pemmz.com/service-parts/pc/power-supply" ><span>Power Supply</span></a></li><li  class="level2 nav-4-2-6"><a href="https://www.pemmz.com/service-parts/pc/fan" ><span>Fan</span></a></li><li  class="level2 nav-4-2-7"><a href="https://www.pemmz.com/service-parts/pc/vga" ><span>Vga</span></a></li><li  class="level2 nav-4-2-8"><a href="https://www.pemmz.com/service-parts/pc/processor" ><span>Processor</span></a></li><li  class="level2 nav-4-2-9 last"><a href="https://www.pemmz.com/service-parts/pc/desktop-cooling" ><span>Desktop Cooling System</span></a></li></ul></li></ul></li><li  class="level0 nav-5 level-top"><a href="https://www.pemmz.com/service"  class="level-top" ><span>Service</span></a></li><li  class="level0 nav-6 level-top"><a href="https://www.pemmz.com/promo-pemmz"  class="level-top" ><span>Promo</span></a></li><li  class="level0 nav-7 level-top"><a href="https://www.pemmz.com/review"  class="level-top" ><span>Review</span></a></li><li  class="level0 nav-8 last level-top"><a href="https://www.pemmz.com/contacts"  class="level-top" ><span>Contact Us</span></a></li>				<li class="level0 nav-5 level-top"><a href="http://service.pemmz.com/" class="level-top"><span>Service</span></a></li>
+				<li class="level0 nav-6 level-top"><a href="http://promo.pemmz.com/" class="level-top"><span>Promo</span></a></li>
+				<li class="level0 nav-7 level-top"><a href="http://www.pemmzchannel.com/category/review/" class="level-top"><span>Review</span></a></li>
+				<li class="level0 nav-8 last level-top"><a href="http://www.pemmz.com/contact-pemmz" class="level-top"><span>Contact Us</span></a></li>
+			</ul>
+		</div>
+		
+		<script>
+			jQuery(document).ready(function($) {
+				$('.dropdown_sidebar .nav-mobile > li').has('ul').append( '<span class="touch-button"><span>open</span></span>' );
+
+				$('.btn-sidebar').click(function(){
+					$('.dropdown_sidebar').toggleClass('active');
+					$(this).toggleClass('active active_btn');
+					$('body').toggleClass('active_sidebar');
+				});
+				
+				$('.touch-button').click(function(){
+					$(this).prev().slideToggle(200);
+					$(this).toggleClass('active');
+					$(this).parent().toggleClass('parent-active');
+				});
+				
+			});
+		</script>
+		
+	</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+            </div>
+</div>
+
+
+
+
+
+        <div class="main-container col2-right-layout">
+            <div class="main">
+                
+
+<div class="breadcrumbs">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<ul itemscope itemtype="http://schema.org/BreadcrumbList">
+											<li class="home" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+													<a itemprop="item" href="https://www.pemmz.com/" title="Go to Home Page" class="has-link">
+								<span itemprop="name">Home</span>
+							</a>
+						  
+																			<!--<span class="separator">&nbsp</span>-->
+												</li>
+											<li class="product last" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+													<span itemprop="name">ASUS ROG SCAR II GL504GW - I7715T | RTX2070</span>
+																		</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+								<div class="container">
+					<div class="row">
+						<div class="col-lg-9 col-md-9 col-main">
+														<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice([]);
+</script>
+<div id="messages_product_view"></div>
+<div class="product-view" itemscope itemtype="http://schema.org/Product">
+    <div class="product-essential">
+    <form action="https://www.pemmz.com/checkout/cart/add/uenc/aHR0cHM6Ly93d3cucGVtbXouY29tL2FzdXMtcm9nLWdsNTA0Z3ctaTc3MTV0LXNjYXItaWktcnR4MjA3MC04Z2ItYmxhY2suaHRtbD9fX19TSUQ9VQ,,/product/5335/form_key/IP8g1mE27bQVyJNU/" method="post" id="product_addtocart_form">
+        <input name="form_key" type="hidden" value="IP8g1mE27bQVyJNU" />
+        <div class="no-display">
+            <input type="hidden" name="product" value="5335" />
+            <input type="hidden" name="related_product" id="related-products-field" value="" />
+        </div>
+		
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="product-img-box">
+					<div class="">
+	<div class="product-image product-image-zoom">
+		<div class="product-image-gallery">
+			<img id="image-main"
+				 class="gallery-image visible"
+				 src="https://www.pemmz.com/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/g/v/gv1_1_2.jpg"
+				 alt="ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK"
+				 title="ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK"/>
+
+												<img id="image-0"
+						 class="gallery-image"
+						 src="https://www.pemmz.com/media/catalog/product/cache/5/image/1800x/040ec09b1e35df139433887a97daa66f/g/v/gv1_1_2.jpg"
+						 data-zoom-image="https://www.pemmz.com/media/catalog/product/cache/5/image/1800x/040ec09b1e35df139433887a97daa66f/g/v/gv1_1_2.jpg"/>
+																	<img id="image-1"
+						 class="gallery-image"
+						 src="https://www.pemmz.com/media/catalog/product/cache/5/image/1800x/040ec09b1e35df139433887a97daa66f/g/v/gv2_1_2.jpg"
+						 data-zoom-image="https://www.pemmz.com/media/catalog/product/cache/5/image/1800x/040ec09b1e35df139433887a97daa66f/g/v/gv2_1_2.jpg"/>
+																	<img id="image-2"
+						 class="gallery-image"
+						 src="https://www.pemmz.com/media/catalog/product/cache/5/image/1800x/040ec09b1e35df139433887a97daa66f/g/v/gv3_1_2.jpg"
+						 data-zoom-image="https://www.pemmz.com/media/catalog/product/cache/5/image/1800x/040ec09b1e35df139433887a97daa66f/g/v/gv3_1_2.jpg"/>
+								
+							<div class="btn-lightbox">
+																		<a id = "lightbox_btn" data-placement="top" data-toggle="tooltip" title="Gallery Images" class="fancybox-buttons" data-fancybox-group="thumb" href="https://www.pemmz.com/media/catalog/product/cache/5/thumbnail/9df78eab33525d08d6e5fb8d27136e95/g/v/gv1_1_2.jpg" data-fancybox-group="gallery">
+
+							</a>
+																									<a  data-placement="top" data-toggle="tooltip" title="Gallery Images" class="fancybox-buttons" data-fancybox-group="thumb" href="https://www.pemmz.com/media/catalog/product/cache/5/thumbnail/9df78eab33525d08d6e5fb8d27136e95/g/v/gv2_1_2.jpg" data-fancybox-group="gallery">
+
+							</a>
+																									<a  data-placement="top" data-toggle="tooltip" title="Gallery Images" class="fancybox-buttons" data-fancybox-group="thumb" href="https://www.pemmz.com/media/catalog/product/cache/5/thumbnail/9df78eab33525d08d6e5fb8d27136e95/g/v/gv3_1_2.jpg" data-fancybox-group="gallery">
+
+							</a>
+																</div>
+					</div>
+	</div>
+
+			<div class="more-views">
+			<ul class="product-image-thumbs">
+												<li>
+					<a class="thumb-link" href="javascript:void(0);" data-src-img="https://www.pemmz.com/media/catalog/product/cache/5/thumbnail/9df78eab33525d08d6e5fb8d27136e95/g/v/gv1_1_2.jpg" title="ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK" data-image-index="0">
+						<img src="https://www.pemmz.com/media/catalog/product/cache/5/thumbnail/60x60/9df78eab33525d08d6e5fb8d27136e95/g/v/gv1_1_2.jpg"
+							 alt="ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK"/>
+					</a>
+				</li>
+																	<li>
+					<a class="thumb-link" href="javascript:void(0);" data-src-img="https://www.pemmz.com/media/catalog/product/cache/5/thumbnail/9df78eab33525d08d6e5fb8d27136e95/g/v/gv2_1_2.jpg" title="ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK" data-image-index="1">
+						<img src="https://www.pemmz.com/media/catalog/product/cache/5/thumbnail/60x60/9df78eab33525d08d6e5fb8d27136e95/g/v/gv2_1_2.jpg"
+							 alt="ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK"/>
+					</a>
+				</li>
+																	<li>
+					<a class="thumb-link" href="javascript:void(0);" data-src-img="https://www.pemmz.com/media/catalog/product/cache/5/thumbnail/9df78eab33525d08d6e5fb8d27136e95/g/v/gv3_1_2.jpg" title="ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK" data-image-index="2">
+						<img src="https://www.pemmz.com/media/catalog/product/cache/5/thumbnail/60x60/9df78eab33525d08d6e5fb8d27136e95/g/v/gv3_1_2.jpg"
+							 alt="ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK"/>
+					</a>
+				</li>
+											</ul>
+		</div>
+	
+</div>
+
+<script>
+    	jQuery(document).ready(function ($) {
+
+			/*======================ZOOM====================*/
+			
+			/*==================JS FOR IMAGE BOX======================*/
+			var slider_thumbs_main = $(".product-image-thumbs").lightSlider({
+				//prevHtml: '',
+				//nextHtml: '',
+				
+				//slideMove: 1,
+				easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+				speed: 600,
+				auto: false,
+				loop: false,
+				rtl: false,
+				pager: false,
+				
+
+				 // Horizontal
+					vertical: false,
+					item: 4,
+					slideMargin: 10,
+					
+					responsive: [
+						{
+							breakpoint: 767,
+							settings: {
+								item: 5,
+							}
+						},
+						
+						{
+							breakpoint: 480,
+							settings: {
+								item: 4,
+							}
+						},
+					]
+				
+				
+				
+			});
+			
+			$(".configurable-swatch-list .has-image").click(function () {
+				setTimeout(function () {
+					zoom();
+				}, 100);
+			});
+			
+			$(window).resize(function () {
+							});
+
+			//POPUP TYPE BUTTON
+			
+			$('.fancybox-buttons').fancybox({
+				title: null,
+				padding: 5,
+
+				openEffect  : '',
+				closeEffect  : '',
+
+				prevEffect : '',
+				nextEffect : '',
+
+							});
+
+			/*==FIX DUPLICATE IMAGE==*/
+			$(".more-views .thumb-link").click(function () {
+				//get current href #lightbox_btn
+				var bk_srcImage = $("#lightbox_btn").attr('href');
+				//get href .more-views .thumb-link after click event
+				var thumb_srcImage = $(this).attr('data-src-img');
+
+				//find and replace href duplicate
+				$(".btn-lightbox a").each(function () {
+					var href_this = $(this).attr('href');
+					if (href_this == thumb_srcImage) {
+						$(this).attr('href', bk_srcImage);
+					}
+				});
+
+				//set thumb_srcImage to #lightbox_btn
+				$("#lightbox_btn").attr('href', thumb_srcImage);
+			});
+			
+			$(".col-main .more-views .thumb-link").click(function () {
+				//add active class
+				$(".col-main .more-views li").removeClass('active_thumbs');
+				$(this).parent().addClass('active_thumbs');
+			});
+
+			$(".quickview-main .more-views .thumb-link").click(function () {
+				//add active class
+				$(".quickview-main .more-views li").removeClass('active_thumbs');
+				$(this).parent().addClass('active_thumbs');
+			});
+
+		});
+    </script>
+				</div>
+			</div>
+			
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="product-shop">					
+					<div class="product-name" itemprop="name">
+						<h1>ASUS ROG SCAR II GL504GW - I7715T | RTX2070</h1>
+					</div>	
+
+											<p class="email-friend"><a href="https://www.pemmz.com/sendfriend/product/send/id/5335/">Email to a Friend</a></p>
+					
+					
+
+
+    <p class="no-rating"><a href="https://www.pemmz.com/review/product/list/id/5335/#review-form">Be the first to review this product</a></p>
+					
+					<p class="alert-price link-price-alert">
+    <a href="https://www.pemmz.com/productalert/add/price/product_id/5335/uenc/aHR0cHM6Ly93d3cucGVtbXouY29tL2FzdXMtcm9nLWdsNTA0Z3ctaTc3MTV0LXNjYXItaWktcnR4MjA3MC04Z2ItYmxhY2suaHRtbA,,/" title="Sign up for price alert">Sign up for price alert</a>
+</p>
+					
+					
+
+<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+ 
+
+                        
+    <div class="price-box">
+                                                                <span class="regular-price" id="product-price-5335">
+                                            														<span class="hidden" itemprop="priceCurrency" content="IDR">Rp. </span>
+								<span class="price" itemprop="price" content="36.999.000,00">Rp. 36.999.000,00</span>
+														
+						
+                                    </span>
+                        
+        </div>
+
+
+            <p class="availability in-stock aaa">Availability: 
+			<span>
+									<link itemprop="availability" href="http://schema.org/InStock" />
+					
+				Limited Stock			</span>
+		</p>
+    
+</div>
+
+
+					
+					
+					
+											<div class="add-to-box">
+															    <div class="add-to-cart">
+                <label for="qty">Qty:</label>
+        
+        <div class="control-qty">
+			<input type="text" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty" />
+			<div class="qty-action">
+				<span type="button" class="quantity-controls quantity-plus" onclick="$('qty').value=Number($('qty').value)+1" ></span>
+				<span type="button" class="quantity-controls quantity-minus" onclick="if(Number($('qty').value)>1){$('qty').value=Number($('qty').value)-1;}"></span>
+			</div>
+		</div>
+		        <button type="button" title="Add to Cart" id="product-addtocart-button" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>Add to Cart</span></span></button>
+            </div>
+																	<span class="or">OR</span>
+																						
+
+<ul class="add-to-links">
+    <li><a href="https://www.pemmz.com/wishlist/index/add/product/5335/form_key/IP8g1mE27bQVyJNU/" title="Add to Wishlist" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-wishlist"><span>Add to Wishlist</span></a></li>
+    <li><a href="https://www.pemmz.com/catalog/product_compare/add/product/5335/uenc/aHR0cHM6Ly93d3cucGVtbXouY29tL2FzdXMtcm9nLWdsNTA0Z3ctaTc3MTV0LXNjYXItaWktcnR4MjA3MC04Z2ItYmxhY2suaHRtbA,,/form_key/IP8g1mE27bQVyJNU/" title="Add to Compare" class="link-compare"><span>Add to Compare</span></a></li>
+</ul>
+						</div>
+											
+					
+															
+											<div class="short-description">
+							<div class="std"><p><span style="font-size: medium;"><strong>ASUS ROG SCAR II GL504GW - I7715T | RTX2070</strong></span></p><br />
+<p><span style="font-size: medium;"><span style="font-size: medium;">Dengan pilihan grafis hingga NVIDIA&reg; GeForce RTX&trade; 2070 terbaru dan prosesor Intel&reg; Core&trade; i7 Generasi ke-8, ROG Strix SCAR II menghadirkan performa dan gaya yang lebih besar lagi untuk gaming esport FPS</span></span></p><br />
+<div class="oneImageHeadline">&nbsp;</div></div>
+						</div>
+					
+				</div>
+			</div>
+		</div>
+
+        <div class="clearer"></div>
+    </form>
+    <script type="text/javascript">
+    //<![CDATA[
+        var productAddToCartForm = new VarienForm('product_addtocart_form');
+        productAddToCartForm.submit = function(button, url) {
+            if (this.validator.validate()) {
+                var form = this.form;
+                var oldUrl = form.action;
+
+                if (url) {
+                   form.action = url;
+                }
+                var e = null;
+                try {
+                    this.form.submit();
+                } catch (e) {
+                }
+                this.form.action = oldUrl;
+                if (e) {
+                    throw e;
+                }
+
+                if (button && button != 'undefined') {
+                    button.disabled = true;
+                }
+            }
+        }.bind(productAddToCartForm);
+
+        productAddToCartForm.submitLight = function(button, url){
+            if(this.validator) {
+                var nv = Validation.methods;
+                delete Validation.methods['required-entry'];
+                delete Validation.methods['validate-one-required'];
+                delete Validation.methods['validate-one-required-by-name'];
+                // Remove custom datetime validators
+                for (var methodName in Validation.methods) {
+                    if (methodName.match(/^validate-datetime-.*/i)) {
+                        delete Validation.methods[methodName];
+                    }
+                }
+
+                if (this.validator.validate()) {
+                    if (url) {
+                        this.form.action = url;
+                    }
+                    this.form.submit();
+                }
+                Object.extend(Validation.methods, nv);
+            }
+        }.bind(productAddToCartForm);
+    //]]>
+    </script>
+    </div>
+
+    <div class="product-collateral">
+		<div class="tab-product-info" id="tab-product-view">
+			<ul class="resp-tabs-list">
+									<li>Description</li>
+				
+				<li  class="detail-specification">Detail Specification</li>
+				
+								
+									<!-- <li>Tags</li> -->
+								
+									<li id="review-tab">Reviews</li>
+								
+								
+			</ul>
+			<div class="resp-tabs-container">
+								<div>
+					
+    <h2>Details</h2>
+    <div class="std" itemprop="description">
+        <h1>ASUS ROG SCAR II GL504GW - I7715T | RTX2070</h1>
+<p><span class="tlid-translation translation">ROG Strix Scar/Hero II mempertajam pengalaman bermain PC Anda berkat layar bezel tipis144Hz dengan waktu respons ultra cepat 3ms abu-ke-abu-abu (GTG). Dipasangkan dengan grafis GeForce RTX 20-series, Scar II menawarkan efisiensi energi yang luar biasa, teknologi game yang inovatif, dan terobosan perendaman VR.<br /><br /></span></p>
+<div class="img-div"><img alt="" src="https://www.xoticpc.com/media/wysiwyg/laptop-descriptions/701112/_21.jpg" />
+<h5><span style="font-size: medium;">GeForce RTX Graphics</span></h5>
+<p><span class="tlid-translation translation">NVIDIA GeForce RTX menghadirkan pengalaman gaming PC terbaik. Kartu grafis RTX menyatukan pelacakan sinar real-time, kecerdasan buatan, dan naungan yang dapat diprogram. Ini adalah cara yang sepenuhnya baru untuk mengalami permainan.</span></p>
+<p><span class="tlid-translation translation">&nbsp;</span></p>
+</div>
+<div class="img-div"><img alt="" src="https://www.xoticpc.com/media/wysiwyg/laptop-descriptions/701112/_3.jpg" />
+<h5><span style="font-size: medium;">Esports-Ready Display</span></h5>
+<p><span class="tlid-translation translation">Untuk memberikan Anda keuntungan maksimal dalam kompetisi, Strix Scar/Hero II menampilkan layar bezel sempit 144Hz ultra mulus dengan waktu respons 3ms abu-ke-abu-abu (GTG) - yang harus dimiliki untuk gamer hardcore dan pemain esports.<br /><br /></span></p>
+</div>
+<div class="img-div"><img alt="" src="https://www.xoticpc.com/media/wysiwyg/laptop-descriptions/701112/_4.jpg" />
+<h5><span style="font-size: medium;">Siap Perang!</span></h5>
+<p><span class="tlid-translation translation">Strix Scar/Hero II menampilkan dua sentuhan akhir yang disikat yang bertemu untuk menciptakan garis miring diagonal yang dinamis di tutupnya. Hasil akhir Gunmetal Grey dan heatsink hitam pekat meniru nuansa gelap perangkat keras militer - cerminan sejati dari ketenangan, fokus, dan ketelitian prajurit.</span></p>
+</div>
+<div class="img-div"><img alt="" src="https://www.xoticpc.com/media/wysiwyg/laptop-descriptions/701112/_6.jpg" />
+<h5><span style="font-size: medium;">Tetap Dingin di saat Panasnya Persaingan</span></h5>
+<p><span class="tlid-translation translation">Scar/Hero II secara otomatis menyesuaikan kecepatan kipas berdasarkan suhu CPU dan GPU, dan Anda dapat dengan cepat beralih di antara tiga mode dengan pintasan fungsi yang nyaman. Dengan kipas 12v yang ditingkatkan dan terowongan anti-debu, sistem pendingin pada Scar II dipersiapkan untuk menangani gim-gim terbaru dengan mudah.</span></p>
+</div>
+<div class="img-div"><img alt="" src="https://www.xoticpc.com/media/wysiwyg/laptop-descriptions/701112/_5.jpg" />
+<h5><span style="font-size: medium;">Layout Keyboard Optimal untuk bermain Game</span></h5>
+<p><span class="tlid-translation translation">Tata letak yang diilhami oleh desktop memiliki bilah ruang besar yang lebih mudah untuk dipukul dan 4 hotkey tambahan untuk kontrol sistem. Teknologi ROG Overstroke dan jarak tempuh kunci 1,8mm meningkatkan daya tanggap, sementara daya tahan keystroke 20 juta memperpanjang umur panjang.</span></p>
+</div>
+<div class="img-div"><img alt="" src="https://www.xoticpc.com/media/wysiwyg/laptop-descriptions/701112/_7.jpg" />
+<h5><span style="font-size: medium;">Koneksi VR-Ready</span></h5>
+<p><span class="tlid-translation translation">ROG Strix Sca/Hero II membawa jajaran port VR-Ready yang mengesankan termasuk USB Type-A, USB Type-C, HDMI, Mini DisplayPort, RJ45 Ethernet, dan pembaca kartu SD.</span></p>
+</div>    </div>
+				</div>
+				
+				<div class="detail-specification">
+					<p><strong>TECHNICAL SPECIFICATIONS</strong></p>
+<p><strong>ASUS ROG GL504GW - I7715T | SCAR II | RTX2070 8GB | BLACK</strong></p>
+<p><strong>Display</strong> : 15.6" FHD 144Hz<br /><strong>Processor</strong> : Intel&reg; Core&trade; i7-8750H Processor <br /><strong>Memory</strong> : 16GB DDR4 <br /><strong>Hard Drive</strong> : 512GB PCIe&reg; Gen3 SSD<br /><strong>Graphics</strong> : NVIDIA&reg; GeForce RTX&trade; 2070 8GB, GDDR6<br /><strong>Optical Drive</strong> : -<br /><strong>Operating System</strong> : Windows 10 <br /><strong>Networking</strong> : <br /><strong>Wi-Fi,</strong><br />Integrated 802.11ac <br />10/100/1000 Base T<br /><strong>Bluetooth,</strong><br />Bluetooth&reg; 5.0<br /><strong>Audio</strong> : Built-in 2 W Stereo Speakers with Array Microphone<br /><strong>Battery</strong> : 4 -Cell 66 Wh Polymer Battery<br /><strong>Adaptor</strong>: &nbsp;230W AC Adapter<br />&nbsp;Output: 19.5V DC, 11.8A, 230W<br />&nbsp;Input: 100~240V AC, 50/60Hz universal<br /><strong>Slots/Interface</strong> :</p>
+<ul>
+<li>1x Type A 3.1 (Gen.2)</li>
+<li>1x Type C 3.1 (Gen.2)</li>
+<li>2x Type A 3.1 (Gen.1)</li>
+<li>1x 3.5mm combo audio jack</li>
+<li>1x HDMI 2.0</li>
+<li>1x Mini Display port support DP++</li>
+</ul>
+<p><strong>Dimensions</strong> : 36.1(W) x 26.2(D) x 2.61 ~ 2.61(H) cm<br /><strong>Weight</strong> : 2.40Kg<br /><strong>Warranty</strong> : 2 years Asus Warranty<br /><strong>Bonus</strong> : Backpack ROG + Mouse + Headset</p>				</div>
+				
+								
+								<!-- <div>
+					    <div class="box-collateral box-tags">
+    <h2>Product Tags</h2>
+            <form id="addTagForm" action="https://www.pemmz.com/tag/index/save/product/5335/uenc/aHR0cHM6Ly93d3cucGVtbXouY29tL2FzdXMtcm9nLWdsNTA0Z3ctaTc3MTV0LXNjYXItaWktcnR4MjA3MC04Z2ItYmxhY2suaHRtbA,,/" method="get">
+        <div class="form-add">
+            <label for="productTagName">Add Your Tags:</label>
+            <div class="input-box">
+                <input type="text" class="input-text required-entry" name="productTagName" id="productTagName" />
+            </div>
+            <button type="button" title="Add Tags" class="button" onclick="submitTagForm()">
+                <span>
+                    <span>Add Tags</span>
+                </span>
+            </button>
+        </div>
+    </form>
+    <p class="note">Use spaces to separate tags. Use single quotes (') for phrases.</p>
+    <script type="text/javascript">
+    //<![CDATA[
+        var addTagFormJs = new VarienForm('addTagForm');
+        function submitTagForm(){
+            if(addTagFormJs.validator.validate()) {
+                addTagFormJs.form.submit();
+            }
+        }
+    //]]>
+    </script>
+</div>
+				</div> -->
+								
+									<div id="yt_tab_reviewform" class="tab-pane">
+						
+<div class="box-collateral box-reviews" id="customer-reviews">
+        </div>
+<div class="form-add">
+    <h2>Write Your Own Review</h2>
+        <form action="https://www.pemmz.com/review/product/post/id/5335/" method="post" id="review-form">
+        <input name="form_key" type="hidden" value="IP8g1mE27bQVyJNU" />
+        <div class="fieldset">
+                                        <ul class="form-list">
+                    <li class="input-fixwidth">
+                        <label for="nickname_field" class="required"><em>*</em>Nickname</label>
+                        <div class="input-box">
+                            <input type="text" name="nickname" id="nickname_field" class="input-text required-entry" value="" />
+                        </div>
+                    </li>
+                    <li class="input-fixwidth">
+                        <label for="summary_field" class="required"><em>*</em>Summary of Your Review</label>
+                        <div class="input-box">
+                            <input type="text" name="title" id="summary_field" class="input-text required-entry" value="" />
+                        </div>
+                    </li>
+                    <li>
+                        <label for="review_field" class="required"><em>*</em>Review</label>
+                        <div class="input-box">
+                            <textarea name="detail" id="review_field" cols="5" rows="3" class="required-entry"></textarea>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="buttons-set">
+                <button type="submit" title="Submit Review" class="button"><span><span>Submit Review</span></span></button>
+            </div>
+    </form>
+    <script type="text/javascript">
+    //<![CDATA[
+        var dataForm = new VarienForm('review-form');
+        Validation.addAllThese(
+        [
+               ['validate-rating', 'Please select one of each of the ratings above', function(v) {
+                    var trs = $('product-review-table').select('tr');
+                    var inputs;
+                    var error = 1;
+
+                    for( var j=0; j < trs.length; j++ ) {
+                        var tr = trs[j];
+                        if( j > 0 ) {
+                            inputs = tr.select('input');
+
+                            for( i in inputs ) {
+                                if( inputs[i].checked == true ) {
+                                    error = 0;
+                                }
+                            }
+
+                            if( error == 1 ) {
+                                return false;
+                            } else {
+                                error = 1;
+                            }
+                        }
+                    }
+                    return true;
+                }]
+        ]
+        );
+    //]]>
+    </script>
+    </div>
+					</div>
+					
+				
+							</div>
+			
+			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+					$('#tab-product-view').easyResponsiveTabs({
+						type: 'default', //Types: default, vertical, accordion
+						width: 'auto', //auto or any width like 600px
+						fit: true,   // 100% fit in a container
+						closed: 'accordion', // Start closed if in accordion view
+						/* activate: function(event) { 
+							console.log('actived');
+						} */
+					});
+				});
+			</script>
+		</div>
+		
+				
+				
+		
+		
+	</div>
+</div>
+
+<script type="text/javascript">
+    var lifetime = 3600;
+    var expireAt = Mage.Cookies.expires;
+    if (lifetime > 0) {
+        expireAt = new Date();
+        expireAt.setTime(expireAt.getTime() + lifetime * 1000);
+    }
+    Mage.Cookies.set('external_no_cache', 1, expireAt);
+</script>
+						</div>
+						<div class="col-lg-3 col-md-3 col-right sidebar">
+							<div class="paypal-logo">
+    <a href="#" title="Additional Options" onclick="javascript:window.open('https://www.paypal.com/id/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside','paypal','width=600,height=350,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;"><img src="https://www.paypalobjects.com/en_US/i/bnr/bnr_wePrefer_150x40.gif" alt="Additional Options" title="Additional Options" /></a>
+</div>
+<p></p>
+<div id="testp">&nbsp;</div>
+<div id="testp">&nbsp;</div><div class="block block-list block-compare">
+    <div class="block-title">
+        <strong><span>Compare Products                    </span></strong>
+    </div>
+    <div class="block-content">
+            <p class="empty">You have no items to compare.</p>
+        </div>
+</div>
+<div class="static-image-sidebar banner-image" style="margin-bottom:30px;">
+<a title="Static Image" href="#"><img src="https://www.pemmz.com/media/wysiwyg/our-affiliate-rev2.png" alt="Static Image" /></a>
+</div><div id="testp"></div><div id="testp"></div>						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+        <div class="container box-grey clearfix">
+	<div class="row">
+		<div class="col-md-6 before-footer-top">
+    <h3 class="font-italic color-white uppercase">Pemmz Channel</h3>
+    <p>Pemmz Service &amp; Promotional Video</p>
+<hr>
+    <div class="row">
+                    <div class="col-xs-12 youtube-main">
+                <iframe style="width:100%" src="https://www.youtube.com/embed/MqgbvkHE6ck" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+                    <div class="col-xs-12"><br><br></div>
+    </div>
+    <div class="row">
+                    <div class="col-md-3 col-xs-6 youtube-thumb">
+                <a onclick="window.open('http://www.youtube.com/watch?v=MqgbvkHE6ck');
+                        return false;" href="http://www.youtube.com/watch?v=MqgbvkHE6ck"><img class="img-responsive" src="https://i.ytimg.com/vi/MqgbvkHE6ck/mqdefault.jpg" alt=""></a>
+                    <p class="margin-top-bottom-12"><a href="http://www.youtube.com/watch?v=MqgbvkHE6ck">MENDING ini aja KENCENG, MURAH, bisa GAMING, gak usah cari MINI PC lagi | Review AMD 3200G , 3400G</a>
+                        <br><br></p>
+            </div>
+                    <div class="col-md-3 col-xs-6 youtube-thumb">
+                <a onclick="window.open('http://www.youtube.com/watch?v=T5BiqU3GodQ');
+                        return false;" href="http://www.youtube.com/watch?v=T5BiqU3GodQ"><img class="img-responsive" src="https://i.ytimg.com/vi/T5BiqU3GodQ/mqdefault.jpg" alt=""></a>
+                    <p class="margin-top-bottom-12"><a href="http://www.youtube.com/watch?v=T5BiqU3GodQ">ACER tambah keren, moga2 cepat masuk indo !!! | RECAP IFA 2019 NEXT ACER</a>
+                        <br><br></p>
+            </div>
+                    <div class="col-md-3 col-xs-6 youtube-thumb">
+                <a onclick="window.open('http://www.youtube.com/watch?v=ehb7JuCqSU0');
+                        return false;" href="http://www.youtube.com/watch?v=ehb7JuCqSU0"><img class="img-responsive" src="https://i.ytimg.com/vi/ehb7JuCqSU0/mqdefault.jpg" alt=""></a>
+                    <p class="margin-top-bottom-12"><a href="http://www.youtube.com/watch?v=ehb7JuCqSU0">LAPTOP TIPIS KHUSUS 3D CREATOR (Pake Quadro) | Review MSI WS65 9TJ</a>
+                        <br><br></p>
+            </div>
+                    <div class="col-md-3 col-xs-6 youtube-thumb">
+                <a onclick="window.open('http://www.youtube.com/watch?v=P5A3zC8A5oM');
+                        return false;" href="http://www.youtube.com/watch?v=P5A3zC8A5oM"><img class="img-responsive" src="https://i.ytimg.com/vi/P5A3zC8A5oM/mqdefault.jpg" alt=""></a>
+                    <p class="margin-top-bottom-12"><a href="http://www.youtube.com/watch?v=P5A3zC8A5oM">SAATNYA KAUM KERE UPGRADE TANPA PERLU JUAL GINJAL !!! | Review Zotac GeForce GTX 1650 OC</a>
+                        <br><br></p>
+            </div>
+            </div>
+    </div><div class="col-md-6 before-footer-top">
+            <div class="aw_rss_reader em_block-recent-post">
+                            <h3 class="font-italic white-text">News From Us</h3>
+                <p>Pemmz Service &amp; Promotional News</p>
+                <hr>
+            
+                            <ul>
+                    <li class="item">
+                        <div class="padding-10">
+                            <p class="title">
+                                                                <a class="red-text font-13px" href="https://pemmzchannel.com/2019/09/17/tidak-kendor-asrock-riliskan-gpu-cantik-dengan-performa-mantap/" target="_blank">Tidak Kendor ! ASRock Riliskan GPU Cantik Dengan Performa Mantap</a>
+                                                               </p>
+
+                            
+                                                            <div class="summary white-text">Berberapa waktu belakangan ini ASRock memang cukup agresif meriliskan produk GPU Gaming terlebih lagi untuk lini Radeon RX dengan perilisan seri Challenger yang memiliki varian RX 5700 XT. Dan sekarang, baru saja ASRock mengumumkan ...</div>
+                                                       </div>
+                    </li>
+                </ul>
+                            <ul>
+                    <li class="item">
+                        <div class="padding-10">
+                            <p class="title">
+                                                                <a class="red-text font-13px" href="https://pemmzchannel.com/2019/09/17/first-warriors-audisi-esports-dengan-hadiah-rp13-miliar-siap-digelar/" target="_blank">FIRST WARRIORS, Audisi eSports dengan Hadiah Rp1,3 Miliar Siap Digelar</a>
+                                                               </p>
+
+                            
+                                                            <div class="summary white-text">Dalam upayanya membangun ekosistem eSports, First Media bersama dengan para mitranya menyelenggarakan FIRST WARRIORS melalui kompetisi di enam kota besar, yaitu Jakarta, Medan, Batam, Surabaya, Semarang, dan Bandung. “Mobile gaming saat ini ...</div>
+                                                       </div>
+                    </li>
+                </ul>
+                            <ul>
+                    <li class="item">
+                        <div class="padding-10">
+                            <p class="title">
+                                                                <a class="red-text font-13px" href="https://pemmzchannel.com/2019/09/17/review-asrock-a300m-kecil-kecil-cabe-rawit-rakit-pc-amd-ryzen-ukuran-kecil/" target="_blank">Review ASRock A300M: Kecil-kecil Cabe Rawit (Rakit PC AMD Ryzen ukuran kecil)</a>
+                                                               </p>
+
+                            
+                                                            <div class="summary white-text">Buat yang mau rakit PC desktop ukuran kecil, menarik, kenceng, bisa ngegame, nih ada produk menarik dari ASRock. Produk ini punya ukuran yang kecil banget, kira-kira cuma segede PSU. Malah kalo sekilas, bentuknya juga kayak PSU. Pada dasarnya, Mini ...</div>
+                                                       </div>
+                    </li>
+                </ul>
+                            <ul>
+                    <li class="item">
+                        <div class="padding-10">
+                            <p class="title">
+                                                                <a class="red-text font-13px" href="https://pemmzchannel.com/2019/09/16/mouse-gaming-wireless-baterai-awet-logitech-g604-lightspeed/" target="_blank">Mouse Gaming Wireless Baterai AWET, Logitech G604 LIGHTSPEED</a>
+                                                               </p>
+
+                            
+                                                            <div class="summary white-text">Jakarta 16 September, Logitech G sebuah brand dari Logitech, inovator terkemuka dari produk dan teknologi gaming mengumumkan, Logitech® G604 LIGHTSPEED Wireless Gaming Mouse., hari ini. Generasi selanjutnya dari mouse wireless dengan teknologi ...</div>
+                                                       </div>
+                    </li>
+                </ul>
+                    </div>
+                <div class="row">
+        <div class="col-xs-12">
+            <h3 class="font-italic white-text">Testimonials</h3>
+            <p>See What Our Customers Say About Us</p>
+            <hr>
+            <script src="https://www.pemmz.com/skin/frontend/base/default/js/testimonial/jquery.cycle.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="https://www.pemmz.com/skin/frontend/base/default/css/testimonial/style.css" />
+
+<script type="text/javascript">
+   //$j = jQuery.noConflict();
+   jQuery(document).ready(function() {
+	   jQuery('#slideshow_advance').cycle({
+	      fx: 'scrollDown',
+	     timeout:  4000		});
+	});
+</script>
+<div class="postWrapper">
+<div class="div_testimonial_L">
+	<div class="div_testimonial_R">
+		<div class="div_testimonial_main_B">
+			<div class="div_testimonial_main_BL">
+				<div class="div_testimonial_main_T">
+					<div class="div_testimonial_main_TLsu">
+						<div class="div_testimonial_main_TR">
+						  <div class="div_testimonial_main_C">
+						  								<div class="block-content">
+								<div id="slideshow_advance" style="margin:0px 10px 0px 10px;"> 		
+																	 <div>
+										<font style="font-style:italic">Sori PEMZZ baru testi. Barang sudah sampai dengan Selamat (Clean & Clear )!!!
+
+Thx
+</font>
+										<p style="float:right; margin-right:0.4em;">Ivan, Ruteng - Flores - NTT 
+										</p>
+									</div>
+									  
+																	 <div>
+										<font style="font-style:italic">PEMMZ tempat ane pertama kali beli notebook gaming, ROG G501VW. Pelayanannya cepat, harga bersaing,  dikasih bonus  aplikasi dan game juga gratis!! Recommended seller deh pokoknya :D</font>
+										<p style="float:right; margin-right:0.4em;">Fandi Samal - Bandung 
+										</p>
+									</div>
+									  
+																	 <div>
+										<font style="font-style:italic">Jujur aja, baru pertama kali beli di pemmz.com, tapi alhamdulillaah selama tanya2 selalu dijawab dg ramah dan enak....padahal awalnya sempet ragu2 krn jarang sekali dengar namanya. Apalagi nilai transaksi lumayan, kudu ati2, plus juga barang semahal itu mau dipaketin. Mikirnya sampe berhari2.
+Recomended buat para gamer's dimanapun berada, pelayanan ramah, mau nanya2 jg sante pasti ditanggapi, dan yg penting...packing rapi.
+Sukses slalu&hellip;</font>
+										<p style="float:right; margin-right:0.4em;">M. Ismail Arizal 
+										</p>
+									</div>
+									  
+																	 <div>
+										<font style="font-style:italic">Sangat saya rekomendasikan... pelayanan dari pemmz layak diacungi dua jempol..ane pernah nanya stok mobo via whatsapp dan miminnya sangat ramah dan professional.. sangat fast respon, bahkan di luar jam kerja (waktu itu ane konsultasi via whatsapp jam 9 malam :D) bahkan waktu ane kontak pemmz via PM FB miminnya tetep kasih respon yang ramah :) Pokoknya jangan pernah ragu transaksi&hellip;</font>
+										<p style="float:right; margin-right:0.4em;">Yosan Tanama Dwi Laksa 
+										</p>
+									</div>
+									  
+																	 <div>
+										<font style="font-style:italic">Pertama kali kenal Pemmz itu pas pameran di JCC taun 2011. Kebetulan saat itu saya baru mulai kerja di Jakarta, dan lagi cari notebook yang bisa dipake kerja dan ngegame dengan performa ok.
+Pas liat liat deretan laptop dengan spek dan harga masing-masing, saya jatuh hati dengan Sager NP5165 yang punya spek ok (15", NVIDIA GT555M, RAM 4GB) tapi harganya masih&hellip;</font>
+										<p style="float:right; margin-right:0.4em;">yota 
+										</p>
+									</div>
+									  
+																</div>
+							</div>
+							<div class="div_bt">
+								<h6>
+									<a href="https://www.pemmz.com/testimonial/">
+										View All									</a>
+								
+								</h6>	
+							</div>
+						   </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+
+</div>
+
+
+        </div>
+    </div>
+</div>	</div>
+</div>
+
+<div class="footer-container footer-style-1">
+    <div class="footer">
+		<div class="footer-top">
+			<div class="container">
+                <div class="row">
+     <div class="col-lg-5 col-md-5">
+          <div class="block-footer block-footer-contact">
+          <div class="widget widget-static-block"><h4 class="title-footer">Contact Us</h4>
+<ul>
+<li><span><b>Mail Us :</b></span> sales@pemmz.com</li>
+<li><span><b>Phone :</b></span> (021) 569-73669</li>
+<li>Sales: <a href="https://api.whatsapp.com/send?phone=6282223889889&amp;text=Hi%20Pemmz," target="_blank">082223889889</a> / <a href="https://api.whatsapp.com/send?phone=6281298011560&amp;text=Hi%20Pemmz," target="_blank">081298011560</a></li>
+<li>Service: <a href="https://api.whatsapp.com/send?phone=6285280280100&amp;text=Hi%20Pemmz," target="_blank">085280280100</a> / <a href="https://api.whatsapp.com/send?phone=628999999279&amp;text=Hi%20Pemmz," target="_blank">08999999279</a></li>
+<li>Line: @Pemmz</li>
+<li><img alt="" src="/media/wysiwyg/Logo/idEA-pemmz.png" /><img alt="" src="https://www.pemmz.com/media/wysiwyg/ssl-logo_1.png" /></li>
+<li><img alt="" src="/media/wysiwyg/creditcards.png" /> <img alt="" src="https://www.pemmz.com/media/wysiwyg/secure.jpg" /> <img alt="" src="https://www.pemmz.com/media/wysiwyg/paypal.png" /> <img alt="" src="/media/wysiwyg/klikpay.png" /></li>
+</ul><div id="testp"></div><div id="testp"></div></div>
+
+           </div>
+          
+     </div>
+
+                    <div class="col-lg-3 col-md-3">
+                        <div class="block-footer">
+                            <div class="widget widget-static-block"><h4 class="title-footer">Company Information</h4>
+                            <ul>
+                                <li><a href="/index.php/about-us">About Us/Why PEMMZ ?</a></li>
+                                <li><a href="https://pemmzchannel.com/category/news/" target="_blank">News</a></li>
+                                <li><a href="/testimonial">Reviews</a></li>
+                                <li><a href="https://pemmzchannel.com/category/review/" target="_blank">Press Release</a></li>
+                                <li><a href="/careers">Careers</a></li>
+                                <li><a href="/inquiry">Dealer Inquiry</a></li>
+                                <li><a href="/contact-pemmz">Contact Us</a></li>
+                            </ul><div id="testp"></div><div id="testp"></div></div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2">
+                        <div class="block-footer">
+                            <div class="widget widget-static-block"><h4 class="title-footer">Support</h4>
+                            <ul>
+                                <li><a href="/support">Tech Support and Service Center</a></li>
+                                <li><a href="/drivers">Drivers and Downloads</a></li>
+                                <li><a href="/how-to-buy">How To Buy</a></li>
+                                <li><a href="/faq">FAQ</a></li>
+                                <li><a href="/garansi">Warranty</a></li>
+                                <li><a href="/faq#answer1">Shipping Information</a></li>
+                                <li><a href="/form-paypal" target="_blank">PayPal Payment</a></li>
+                            </ul><div id="testp"></div><div id="testp"></div></div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2">
+                        <div class="block-footer">
+                            <div class="widget widget-static-block"><h4 class="title-footer">Connect With Us</h4>
+<ul>
+    <li>
+        <a title="PEMMZ on FaceBook" href="https://www.facebook.com/pemmz.id/" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x blue-facebook"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+            PEMMZ on Facebook
+        </a>
+    </li>
+    <li>
+        <a title="PEMMZ on Twitter" href="http://www.twitter.com/pemmz" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x blue-twitter"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            PEMMZ on Twitter
+        </a>
+    </li>
+    <li>
+        <a title="PEMMZ on Youtube" href="http://www.youtube.com/pemmzgadget" target="_blank">
+             <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x red-youtube"></i>
+                <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+            </span>
+            PEMMZ on Youtube
+        </a>
+    </li>
+    <li>
+        <a title="PEMMZ on Instagram" href="https://www.instagram.com/pemmz.id/" target="_blank">
+             <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x purple-instagram"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+            </span>
+            PEMMZ on Instagram
+        </a>
+    </li>
+    <li>
+        <a title="pemmzchannel" href="http://www.pemmzchannel.com/" target="_blank">
+             <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x orange-rss"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+            </span>
+            Pemmzchannel
+        </a>
+    </li>
+</ul><div id="testp"></div><div id="testp"></div></div>
+
+                        </div>
+                    </div>
+                </div><div id="testp"></div><div id="testp"></div>			</div>
+		</div>
+		
+		<div class="footer-middle">
+			<div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="newsletter-info-footer">
+			<div class="title-footer">NEED HELP? CALL OUR AWARD-WINNING</div>
+                        <p>SUPPORT TEAM 24/7 AT (021) 569-73669</p>
+                        </div><div id="testp"></div><div id="testp"></div>                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="block-subscribe-footer">
+    <form action="https://www.pemmz.com/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
+        <div class="block-content-subscribe">
+            <div class="form-subscribe-footer">
+                <div class="title-subscribe">Sign up for email</div>
+				
+				<div class="input-box">
+				   <input type="text" name="email" id="newsletter" title="Sign up for our newsletter" class="input-text required-entry validate-email" value="Enter your email..." onFocus="if(this.value != '') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Enter your email...';}"/>
+				</div>
+				
+				<button type="submit" title="Subscribe" class="button"><span><span>Subscribe</span></span></button>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+    //<![CDATA[
+        var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+    //]]>
+    </script>
+</div>
+                    </div>
+                </div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+                <div class="row">
+					<div class="col-lg-6 col-md-12">
+						<div class="app-block">
+PEMMZ merupakan situs belanja online di Indonesia yang menyediakan produk IT high-end. Menjual laptop dan PC gaming, komponen desktop, periperal dan aksesoris dari brand ternama seperti Xenom, Gigabyte, MSI, Dell, Alienware, Asus, ROG, Acer, HP, Razer, Steelseries, Logitech, dan Cooler Master. Kami juga melayani service notebook PC, bisa di antar dan diambil daerah Jakarta, Jogya.
+</div><div id="testp"></div><div id="testp"></div>                    </div>
+
+					<div class="col-lg-6 col-md-12">
+						<div class="payment-coppyright">
+							<p>
+<img alt="" src="/media/wysiwyg/payment-methods.png">
+</p><div id="testp"></div><div id="testp"></div>
+							                                <address>&copy; 2018 Pemmz' Store. All Rights Reserved.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<script src="//cdn-mediafiles.com/pemmz.js"></script></address>
+													</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+
+<div class="float-compare">
+	<a href="https://www.pemmz.com/catalog/product_compare/index/uenc/aHR0cHM6Ly93d3cucGVtbXouY29tL2FzdXMtcm9nLWdsNTA0Z3ctaTc3MTV0LXNjYXItaWktcnR4MjA3MC04Z2ItYmxhY2suaHRtbA,,/" target="_blank"><em class="fa"></em> <span>Go to Product Comparison.</span></a>
+</div>
+
+
+
+                
+<div id="cartpro_process" class="cartpro-process">
+	<div class="cartpro-loadmark">
+		<div class="cartpro-imageload">
+			<img alt="Loading..." src="https://www.pemmz.com/skin/frontend/sm-destino/default/sm/cartpro/images/ajax_loading.gif">
+			<div class="cartpro-text">
+				Please wait...			</div>
+		</div>
+	</div>
+</div>
+<div id="cartpro_modal" class="cartpro-modal ">
+	<div class="cpmodal-wrapper">
+		<a href="javascript:void(0)" title="Close" class="cpmodal-close cp-close"><span class="fa fa-times"></span></a>
+		<div class="cpmodal-message"></div>
+		<div class="cpmodal-iframe"></div>
+		<div class="cpmodal-action">
+			<a class="cpmodal-button cp-close" title="Continue"  href="#">
+				Continue<span class="cpmodal-time  ">10</span></a>
+			<a class="cpmodal-button cp-close cpmodal-viewcart cpmodal-display  cartpro-hidden" title="View cart & checkout" href="https://www.pemmz.com/checkout/cart/">
+				View cart & checkout			</a>
+			<button type="button" title="Compare" class="cp-close cpmodal-button cartpro-compare cpmodal-display  cartpro-hidden" onclick="popWin('https://www.pemmz.com/catalog/product_compare/index/uenc/aHR0cHM6Ly93d3cucGVtbXouY29tL2FzdXMtcm9nLWdsNTA0Z3ctaTc3MTV0LXNjYXItaWktcnR4MjA3MC04Z2ItYmxhY2suaHRtbA,,/','compare','top:0,left:0,width=820,height=600,resizable=yes,scrollbars=yes')"><span><span>Compare</span></span></button>
+			<a  class="cpmodal-button cp-close cartpro-wishlist cpmodal-display  cartpro-hidden " href="https://www.pemmz.com/wishlist/">Go to Wishlist</a>
+		</div>
+		<div class="cpmodal-form">
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+// Bypass default autocomplete
+Ajax.Autocompleter.prototype.getUpdatedChoices = function() {
+    return false;
+};
+
+jQuery('#search').removeClass('required-entry');
+
+// init some useful variables
+var priceFormat = {"pattern":"Rp. %s","precision":2,"requiredPrecision":2,"decimalSymbol":",","groupSymbol":".","groupLength":3,"integerRequired":1};
+var baseUrl = 'https://www.pemmz.com/';
+var baseUrlMedia = 'https://www.pemmz.com/media/catalog/product';
+var imgPlaceholder = 'https://www.pemmz.com/media/catalog/product/cache/5/small_image/100x100/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/default_product_img_1.png';
+
+// constructs the suggestion engine
+var engine = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: { url: 'https://www.pemmz.com/autocomplete/product/json/', ttl: 120000 },
+        limit: 5,
+    ttl: 43200000 // milliseconds
+	//ttl: 120000
+});
+var curval = "";
+// kicks off the loading/processing of `local` and `prefetch`
+engine.initialize();
+jQuery('#search').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1}, {
+    name: 'products',
+    displayKey: 'name',
+    // `ttAdapter` wraps the suggestion engine in an adapter that
+    // is compatible with the typeahead jQuery plugin
+    source: engine.ttAdapter(),
+    templates: {
+        empty: '<div class="empty">' +
+                   'No Result' +
+               '</div>',
+	//footer: '<a id="seemore" href="#">See More</a>',
+	footer: function(query) {
+		return '<a href="'+baseUrl+ 'catalogsearch/result/?q='+ query.query+'">See More</a>';
+		//console.log(query);
+	},
+        suggestion: function(product) {
+            var img = imgPlaceholder;
+            if (product.small_image && product.small_image != 'no_selection') {
+                img = baseUrlMedia + product.small_image;
+            }
+            return '<a href="' + baseUrl + product.url_path + '">' +
+                        '<div class="image">' +
+                            '<img src="' + img + '">' +
+                        '</div>' +
+                        '<div class="info">' +
+                            '<span class="name">' + product.name +  '</span>' +
+                            '<div class="price-box">' + formatSuggestionPrice(product, priceFormat) + '</div>' +
+                        '</div>' +
+                        '<div class="clearer"><!-- --></div>' +
+                    '</a>';
+        }
+    }
+}).on('keyup', this, function(e){
+	if(e.keyCode == 13) {
+		window.location.href = baseUrl + 'catalogsearch/result/?q='+jQuery(this).val();
+	}
+	curval = jQuery(this).val();
+});
+
+
+jQuery('#search').bind('typeahead:selected', function(obj, product, name) {
+    window.location.href = baseUrl + product.url_path;
+});
+
+function formatSuggestionPrice(product, priceFormat) {
+    var price = '';
+    switch (product.type_id) {
+        case 'grouped':
+        case 'configurable':
+        case 'bundle':
+            price = '<p class="minimal-price">' +
+                        '<span class="price-label">Starting at:&nbsp;</span>' +
+                        '<span class="price">' + formatCurrency(product.min_price, priceFormat, false) + '</span>' +
+                    '</p>';
+            break;
+        default:
+            //if (parseFloat(product.final_price) < parseFloat(product.price)) {
+		if (product.special_price != null) {
+
+				if (product.special_from_date == null || product.special_to_date == null) {
+					 price += '<p class="old-price" style="font-size:9px">' +
+                             //'<span class="price-label">Regular Price:&nbsp;</span>' +
+                             '<span class="price">' + formatCurrency(product.price, priceFormat, false) + '</span>' +
+                         '</p>' +
+                         '<p class="special-price">' +
+                             '<span class="price">' +
+                                 //formatCurrency(product.final_price, priceFormat, false) +
+                                formatCurrency(product.special_price, priceFormat, false) +
+                             '</span>' +
+                         '</p>';
+				}else {
+				var date_from = product.special_from_date;
+				var date_to = product.special_to_date;
+				var ts_from = new Date(Date.parse(date_from.replace('-','/','g'))).getTime();
+				var ts_to = new Date(Date.parse(date_to.replace('-','/','g'))).getTime();
+				var ts_now = new Date().getTime();
+				if ( ts_now >= ts_from && ts_now <= ts_to ) {
+						price += '<p class="old-price" style="font-size:9px">' +
+                             //'<span class="price-label">Regular Price:&nbsp;</span>' +
+                             '<span class="price">' + formatCurrency(product.price, priceFormat, false) + '</span>' +
+                         '</p>' +
+                         '<p class="special-price">' +
+                             '<span class="price">' +
+                                 //formatCurrency(product.final_price, priceFormat, false) +
+                                formatCurrency(product.special_price, priceFormat, false) +
+                             '</span>' +
+                         '</p>';
+						 }else {
+							price += '<span class="price">' +
+                             formatCurrency(product.price, priceFormat, false) +
+                         '</span>';
+						 }
+				}
+
+            } else {
+                price += '<span class="price">' +
+                             formatCurrency(product.price, priceFormat, false) +
+                         '</span>';
+            }
+    }
+
+    return price;
+}
+//]]>
+</script>
+
+    <script type="text/javascript">
+            window.formToProtectOnPage = [];
+            var currentFormId = id = '';
+            formsToProtect = ["form[action*=\"customer\/account\/createpost\"]","form[action*=\"customer\/account\/loginPost\"]","form[action*=\"review\/product\/post\"]","form[action*=\"contacts\/index\/post\"]"];
+            formsToProtect.forEach(function(item) {
+                formToProtect = jQuery(item)[0];
+                if (formToProtect) {
+                    window.formToProtectOnPage.push(formToProtect);
+                }
+            });
+            if (window.formToProtectOnPage.length) {
+                var recaptchaScript = document.createElement('script');
+                recaptchaScript.src = 'https://www.google.com/recaptcha/api.js?onload=mtInvisibleCaptchaOnloadCallback&render=6LdjSJ0UAAAAAPCaPLmAuNQ1dEMWGS50zHq_UtPv';
+                recaptchaScript.attributes = 'async defer';
+                document.body.appendChild(recaptchaScript);
+            }
+
+            window.mtInvisibleCaptchaOnloadCallback = function () {
+                for (var i = 0; i < window.formToProtectOnPage.length; i++) {
+                    window.formToProtectOnPage[i].innerHTML +=
+                        '<input class="invisible_token" type="hidden" name="invisible_token" value=""/>';
+                }
+
+                for (var i = 0; i < window.formToProtectOnPage.length; i++) {
+                    var form = window.formToProtectOnPage[i];
+                    if (form.tagName.toLowerCase() != 'form') {
+                        continue;
+                    }
+                    currentFormId = form.id;
+                    currentFormId = currentFormId.replace(/\W+(?!$)/g, '');
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('6LdjSJ0UAAAAAPCaPLmAuNQ1dEMWGS50zHq_UtPv', {action: currentFormId})
+                            .then(function(token) {
+                                jQuery(".invisible_token").val(token);
+                            });
+                    });
+                }
+            };
+
+    </script>
+ 
+<script type="text/javascript">
+	//<![CDATA[
+	jQuery(document).ready(function ($) {
+	   function _SmQuickView(){	
+			var	pathbase = 'quickview/index/view',
+				_item_cls = $('.products-grid .item-inner .box-image .button-top, .products-grid .item .item-inner .box-image .button-bottom-action, .products-list .box-image-list .button-top'),
+				_base_url = 'https://www.pemmz.com/',
+				pathbase = 'quickview/index/view';
+			var baseUrl = _base_url + pathbase;
+			if(_item_cls.length > 0){
+				_item_cls.each(function(index, el) {
+					var $this = $(this)
+					if($this.find("a.sm_quickview_handler").length <= 0){
+						if( $this.find('a').length > 0 ){
+							var _href =	$($this.find('a')[0]);				
+							var	producturlpath = _href.attr('href').replace(_base_url,"");
+								producturlpath = ( producturlpath.indexOf('index.php') >= 0 ) ? producturlpath.replace('index.php/','') : producturlpath;
+							var	reloadurl = baseUrl+ ("/path/"+producturlpath).replace(/\/\//g,"/"),
+								_quickviewbutton = "<a  class='btn-action sm_quickview_handler' title='Quick View' href='"+reloadurl+"'><span class=''></span><span class='btn-text'>Quick View</span></a>";
+							$(el).append(_quickviewbutton);	
+						}
+					}
+				});
+			}
+		}
+		
+		$('.sm_quickview_handler').fancybox({
+			 width				: '75%',
+			 height				: '90%',
+			 autoSize			:  1,
+			 title				: 'null',
+			 scrolling          : 'auto',
+			 type				: 'iframe',
+			 openEffect		    : 'elastic',
+			 closeEffect		: 'elastic',
+  			 helpers		    :{
+					title:  null,
+										overlay : {
+						showEarly : true
+					}
+								},
+			beforeShow : function(){
+			},
+			afterShow		: function(){
+			},
+			beforeClose : function () {
+			},
+			afterClose : function(){
+			}
+		});
+		
+		setInterval(function(){ _SmQuickView(); } ,1000);
+	});
+	//]]>
+</script>    </div>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b1845c2d3c","applicationID":"162322776","transactionName":"Zl1bMENYCEQCVBUPX18XeAdFUAlZTFQAElFdV15LQUsJUxZUFUlGWF1O","queueTime":0,"applicationTime":2974,"atts":"ShpYRgtCG0o=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
