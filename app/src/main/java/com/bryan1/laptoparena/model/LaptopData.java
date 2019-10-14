@@ -7,16 +7,16 @@ import java.util.ArrayList;
 public class LaptopData
 {
     private static String[] laptopNames = {
-            "ACER E5476G",
-            "Acer Nitro 5",
-            "Acer Swift 3",
-            "ASUS ROG SCAR",
-            "Asus Rog Zephyrus",
-            "Asus Tuf fx505",
-            "Asus Tuf fx505",
-            "Asus Vivobook S14 s410",
-            "LenovoIdepad320",
-            "MSI GL62"
+            " Acer E5476G",
+            " Acer Nitro 5",
+            " Acer Swift 3",
+            " ASUS ROG SCAR",
+            " Asus Rog Zephyrus",
+            " Asus Tuf fx505",
+            " Asus Tuf fx505",
+            " Asus Vivobook S14 s410",
+            " LenovoIdepad320",
+            " MSI GL62"
     };
 
     private static String[] laptopDetails = {

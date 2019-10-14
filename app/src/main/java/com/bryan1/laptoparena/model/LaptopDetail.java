@@ -16,8 +16,7 @@ public class LaptopDetail extends AppCompatActivity
     public static final String EXTRA_DETAIL = "extra_detail";
     public static final String EXTRA_PHOTO = "extra_photo";
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laptop_detail);
 
@@ -27,11 +26,12 @@ public class LaptopDetail extends AppCompatActivity
 
         String name = getIntent().getStringExtra(EXTRA_NAME);
         String detail = getIntent().getStringExtra(EXTRA_DETAIL);
-        int photo = getIntent().getIntExtra(EXTRA_PHOTO,0);
+        int photo = getIntent().getIntExtra(EXTRA_PHOTO, 0);
 
         Glide.with(this).load(photo).into(tvPhoto);
         tvName.setText(name);
         tvDetail.setText(detail);
-
+        Laptop mantap = new Laptop();
+        getSupportActionBar().setTitle("Laptop Details");
     }
 }

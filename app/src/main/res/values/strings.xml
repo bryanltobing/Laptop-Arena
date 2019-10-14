@@ -2,4 +2,6 @@
     <string name="app_name">LaptopArena</string>
     <string name="laptop_name">laptop_name</string>
     <string name="detail">detail</string>
+    <string name="profile_name">Bryan Lumbantobing</string>
+    <string name="profile_email">bryantobing0@gmail.com</string>
 </resources>
