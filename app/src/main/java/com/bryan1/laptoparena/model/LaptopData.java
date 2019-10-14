@@ -16,7 +16,7 @@ public class LaptopData
             "Asus Tuf fx505",
             "Asus Vivobook S14 s410",
             "LenovoIdepad320",
-            "LenovoIdepad320"
+            "MSI GL62"
     };
 
     private static String[] laptopDetails = {
@@ -45,7 +45,7 @@ public class LaptopData
             R.drawable.gambar_sepuluh
     };
 
-    static ArrayList<Laptop> getListData()
+    public static ArrayList<Laptop> getListData()
     {
         ArrayList<Laptop> list = new ArrayList<>();
         for (int position = 0 ; position < laptopNames.length; position++)

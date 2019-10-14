@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".model.LaptopDetail">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="160dp"
+            android:layout_height="220dp"
+            android:layout_marginHorizontal="100dp"
+            android:id="@+id/img_laptop_photo"
+            android:scaleType="centerCrop"
+            tools:src="@color/colorAccent"/>
+        <TextView
+            android:id="@+id/tv_laptop_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@id/img_laptop_photo"
+            android:layout_toRightOf="@id/img_laptop_photo"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="@string/laptop_name"/>
+        <TextView
+            android:id="@+id/tv_laptop_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_laptop_name"
+            android:layout_toEndOf="@id/img_laptop_photo"
+            android:layout_toRightOf="@id/img_laptop_photo"
+            android:ellipsize="end"
+            android:maxLines="5"
+            tools:text="@string/laptop_name"/>
+    </LinearLayout>
+
+
+</ScrollView>
