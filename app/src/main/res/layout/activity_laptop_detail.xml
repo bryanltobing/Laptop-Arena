@@ -5,38 +5,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".model.LaptopDetail">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="160dp"
-            android:layout_height="220dp"
-            android:layout_marginHorizontal="100dp"
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="160dp"
+            android:layout_marginHorizontal="5dp"
             android:id="@+id/img_laptop_photo"
-            android:scaleType="centerCrop"
             tools:src="@color/colorAccent"/>
+
         <TextView
             android:id="@+id/tv_laptop_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginBottom="8dp"
             android:layout_toEndOf="@id/img_laptop_photo"
             android:layout_toRightOf="@id/img_laptop_photo"
+            android:background="@drawable/rounded_corner"
+            android:layout_marginTop="22dp"
+            android:padding="6dp"
             android:textSize="16sp"
             android:textStyle="bold"
-            tools:text="@string/laptop_name"/>
+            android:typeface="serif"
+            tools:text="@string/laptop_name" />
+
         <TextView
-            android:id="@+id/tv_laptop_detail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/tv_laptop_name"
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Gaming / Multimedia"
+            android:layout_marginTop="8dp"
             android:layout_toEndOf="@id/img_laptop_photo"
             android:layout_toRightOf="@id/img_laptop_photo"
-            android:ellipsize="end"
-            android:maxLines="5"
-            tools:text="@string/laptop_name"/>
-    </LinearLayout>
+            android:layout_below="@id/tv_laptop_name"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:id="@+id/tv_laptop_prices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img_laptop_photo"
+            android:layout_toRightOf="@id/img_laptop_photo"
+            android:layout_below="@id/category"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="10dp"
+            tools:text="@string/laptop_prices"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/img_laptop_photo"
+            android:background="@color/detailBackground"
+            android:layout_margin="10dp"
+            android:padding="20dp">
+            <TextView
+                android:id="@+id/tv_laptop_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:typeface="sans"
+                tools:text="@string/detail"/>
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
 </ScrollView>

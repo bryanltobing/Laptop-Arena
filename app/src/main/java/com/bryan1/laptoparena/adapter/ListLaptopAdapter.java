@@ -42,7 +42,7 @@ public class ListLaptopAdapter extends RecyclerView.Adapter<ListLaptopAdapter.Li
         Laptop laptop = listLaptop.get(position);
         Glide.with(holder.itemView.getContext())
                 .load(laptop.getPhoto())
-                .apply(new RequestOptions().override(100, 100))
+                .apply(new RequestOptions().override(300, 300))
                 .into(holder.imgPhoto);
         holder.tvName.setText(laptop.getName());
         holder.tvDetail.setText(laptop.getDetail());

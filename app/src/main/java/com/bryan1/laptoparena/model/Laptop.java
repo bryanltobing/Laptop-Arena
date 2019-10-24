@@ -4,6 +4,16 @@ public class Laptop
 {
     private String name;
     private String detail;
+    private String prices;
+
+    public String getPrices() {
+        return prices;
+    }
+
+    public void setPrices(String prices) {
+        this.prices = prices;
+    }
+
     private int photo;
 
     public String getName() {

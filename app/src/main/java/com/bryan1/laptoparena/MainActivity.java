@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         Intent moveDetail = new Intent(MainActivity.this, LaptopDetail.class);
         moveDetail.putExtra(LaptopDetail.EXTRA_PHOTO,laptop.getPhoto());
         moveDetail.putExtra(LaptopDetail.EXTRA_NAME, laptop.getName());
+        moveDetail.putExtra(LaptopDetail.EXTRA_PRICES, laptop.getPrices());
         moveDetail.putExtra(LaptopDetail.EXTRA_DETAIL, laptop.getDetail());
         startActivity(moveDetail);
         Toast.makeText(this, laptop.getName() + " Details", Toast.LENGTH_SHORT).show();
