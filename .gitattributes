@@ -1,7 +1,2 @@
-# Example of a `.gitattributes` file which reclassifies `.rb` files as Java:
-*.rb linguist-language=Java
-
-# Replace any whitespace in the language name with hyphens:
-*.glyphs linguist-language=OpenStep-Property-List
-
-experiments/exp1_airfoil/airfoil_index.htm linguist-detectable=false
+*.C linguist-language=C++
+*.H linguist-language=C++
