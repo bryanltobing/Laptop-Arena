@@ -3,3 +3,5 @@
 
 # Replace any whitespace in the language name with hyphens:
 *.glyphs linguist-language=OpenStep-Property-List
+
+experiments/exp1_airfoil/airfoil_index.htm linguist-detectable=false
